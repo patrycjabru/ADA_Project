@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+D:\aSTUDIA\ADA_project\waterfactory.gpr
+20181211103352
+[BOUND OBJECT FILES]
+D:\aSTUDIA\ADA_project\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LD:\aSTUDIA\ADA_project\obj\
+-LD:\aSTUDIA\ADA_project\obj\
+-LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-static
+-static-libgcc
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
