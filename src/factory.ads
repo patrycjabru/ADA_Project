@@ -1,0 +1,15 @@
+with Ada.Text_IO, fifo;
+use Ada.Text_IO;
+
+package Factory is
+
+   task Machine_A is 
+      entry Start;
+   end Machine_A;
+   
+   task Machine_B is 
+      entry Start;
+   end Machine_B;
+
+   procedure run;
+end Factory;

@@ -2,8 +2,10 @@
 b__main.o
 [PROJECT FILES]
 D:\aSTUDIA\ADA_project\waterfactory.gpr
-20181211103352
+20181213160644
 [BOUND OBJECT FILES]
+D:\aSTUDIA\ADA_project\obj\fifo.o
+D:\aSTUDIA\ADA_project\obj\factory.o
 D:\aSTUDIA\ADA_project\obj\main.o
 [GENERATED SOURCE FILES]
 b__main.ads
@@ -15,5 +17,8 @@ b__main.ali
 -LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
 -static
 -static-libgcc
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnarl.a
 D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
--Wl,--stack=0x2000000
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

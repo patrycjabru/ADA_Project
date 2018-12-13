@@ -1,9 +1,7 @@
-with Ada.Text_IO,Ada.Float_Text_IO;
-use Ada.Text_IO,Ada.Float_Text_IO;
+with Ada.Text_IO,Ada.Float_Text_IO, factory;
+use Ada.Text_IO,Ada.Float_Text_IO, factory;
 
 procedure Main is
-
 begin
-   --  Insert code here.
-   null;
+   Factory.run;
 end Main;
