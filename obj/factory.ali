@@ -7,17 +7,20 @@ P ZX
 RN
 RV NO_ACCESS_SUBPROGRAMS
 RV NO_ALLOCATORS
+RV NO_DELAY
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_DISPATCH
 RV NO_DISPATCHING_CALLS
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
 RV NO_IO
 RV NO_IMPLICIT_CONDITIONALS
 RV NO_LOCAL_ALLOCATORS
 RV NO_NESTED_FINALIZATION
 RV NO_RECURSION
+RV NO_RELATIVE_DELAY
 RV NO_STANDARD_STORAGE_POOLS
 RV NO_STREAMS
 RV NO_TASKING
@@ -31,8 +34,9 @@ RV SPARK_05
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=2
 
-U factory%b		factory.adb		9f06138f OO PF PK
+U factory%b		factory.adb		6cda7a39 OO PF PK
 W ada%s			ada.ads			ada.ali
+Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.doubly_linked_lists%s
 Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
@@ -46,6 +50,7 @@ Z fifo%s		fifo.adb		fifo.ali  ED
 Z system%s		system.ads		system.ali
 Z system.exception_table%s  s-exctab.adb	s-exctab.ali
 Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
 Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
@@ -72,6 +77,8 @@ Z system.tasking%s	s-taskin.adb		s-taskin.ali
 Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
 
 D ada.ads		20180524051736 76789da1 ada%s
+D a-calend.ads		20180524051738 372815c8 ada.calendar%s
+D a-caldel.ads		20180524051736 9f20b83d ada.calendar.delays%s
 D a-contai.ads		20180524051736 61e5e089 ada.containers%s
 D a-cdlili.ads		20180524051736 8e06b4f2 ada.containers.doubly_linked_lists%s
 D a-cdlili.adb		20180524051736 8ed211ef ada.containers.doubly_linked_lists%b
@@ -88,7 +95,7 @@ D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
 D factory.ads		20181213174400 7ab08779 factory%s
-D factory.adb		20181213174754 e5b694f6 factory%b
+D factory.adb		20181215175554 166afd40 factory%b
 D fifo.ads		20181213174400 c7b08b59 fifo%s
 D fifo.adb		20181213174400 42862f34 fifo%b
 D interfac.ads		20180524051736 5ab55268 interfaces%s
@@ -104,6 +111,7 @@ D s-exctab.ads		20180524051738 54135002 system.exception_table%s
 D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
 D s-finmas.ads		20180524051738 7811a767 system.finalization_masters%s
 D s-finroo.ads		20180524051738 4ff27390 system.finalization_root%s
+D s-imgint.ads		20180524051736 02dbe0c2 system.img_int%s
 D s-memory.ads		20180524051736 597d6634 system.memory%s
 D s-multip.ads		20180524051736 38ac9f73 system.multiprocessors%s
 D s-osinte.ads		20180524051738 2e5b26a9 system.os_interface%s
@@ -133,45 +141,54 @@ D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
 D s-win32.ads		20180524051736 b7f96285 system.win32%s
 X 1 ada.ads
-16K9*Ada 20e8 17|1r6 2r5
-X 3 a-cdlili.ads
-51R9 List<8|43R9>
-X 10 a-iteint.ads
+16K9*Ada 20e8 19|1r6 2r5
+X 5 a-cdlili.ads
+51R9 List<10|43R9>
+X 12 a-iteint.ads
 24h9 Forward_Iterator
-32h9 Reversible_Iterator<24R9[3|69]>
-X 14 a-textio.ads
-49K13*Text_IO 471e16 17|1w10 2r9
-263U14*Put_Line 18|20s7 27s7
-X 17 factory.ads
-4K9*Factory 15l5 15e12 18|1b14 37l5 37t12
-6t9*Machine_A 18|17b14 22t7 34r7
-7Y13 Start 18|19b14 34s17
-10t9*Machine_B 18|24b14 30t7 35r7
-11Y13 Start 18|26b14 35s17
-14U14*run 18|32b14 36t7
-X 18 factory.adb
-3I12 Percent{integer} 7r18
-5R9 Bottle 9e17 11r36 14r23
-7i10*filled{3I12}
-8b10*capped{boolean}
-11K12 Bottle_Fifo[19|4] 12r8
-13r4 Fifo_AB{19|5R10[11]} 21m7 21r7
-14r4 bot1{5R9} 21r20
-14r10 bot2{5R9}
-14r16 bot3{5R9}
-X 19 fifo.ads
-4k10*Fifo 17|1w19 18|11r31 19|13e10
-5R10*Fifo_Type<3|51R9[10[18|11]]> 18|13r14[11]
-6U15*Push 18|21s15[11]
-X 25 system.ads
+32h9 Reversible_Iterator<24R9[5|69]>
+X 16 a-textio.ads
+49K13*Text_IO 471e16 19|1w10 2r9
+242U14*Put 20|43s10 44s10
+263U14*Put_Line 20|26s7 32s7 45s10 49s7
+X 19 factory.ads
+4K9*Factory 15l5 15e12 20|1b14 74l5 74t12
+6t9*Machine_A 20|22b14 33t7 70r7
+7Y13 Start 20|25b14 70s17
+10t9*Machine_B 20|35b14 55t7 71r7
+11Y13 Start 20|48b14 71s17
+14U14*run 20|67b14 72t7
+X 20 factory.adb
+3I12 Percent{integer} 9r18
+4I12 nonNegative{integer} 8r15
+6R9 Bottle 11e17 12r33 61r21
+8i10*id{4I12} 44r18 62m14
+9i10*filled{3I12} 39r20 40m17 40r31
+10b10*capped{boolean}
+12P9 Bottle_access(6R9) 14r36 23r13 36r13 58r10
+14K12 Bottle_Fifo[21|4] 15r8
+17r4 Fifo_init{21|5R10[14]} 28m10 28r10 63m10 63r10
+18r4 Fifo_AB{21|5R10[14]} 29m10 29r10 51m10 51r10
+23p7 bot{12P9} 28m24 28r24 29r23 30r20
+36p7 bot{12P9} 39r16 40r13 40r27 44r14 51m22 51r22 53r20
+37U17 fillBottle 37b17 46t10 52s10
+57U14 init 57b14 65t7 69s7
+58p4 bot{12P9} 61m10 62r10 63r25
+60i11 I{integer} 62r20
+X 21 fifo.ads
+4k10*Fifo 19|1w19 20|14r31 21|13e10
+5R10*Fifo_Type<5|51R9[10[20|14]]> 20|17r16[14] 18r14[14]
+6U15*Push 20|29s18[14] 63s20[14]
+7U15*Pop 20|28s20[14] 51s18[14]
+X 27 system.ads
 67M9*Address
-X 34 s-memory.ads
-53V13*Alloc{25|67M9} 103i<c,__gnat_malloc>22
+X 37 s-memory.ads
+53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{25|67M9} 105i<c,__gnat_realloc>22
-X 42 s-stausa.ads
+76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
+X 45 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 44 s-stalib.adb
+X 47 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 
