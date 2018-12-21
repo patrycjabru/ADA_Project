@@ -32,9 +32,9 @@ RV NO_IMPLICIT_ALIASING
 RV NO_ELABORATION_CODE
 RV SPARK_05
 RV MAX_TASK_ENTRIES=1
-RV MAX_TASKS=2
+RV MAX_TASKS=3
 
-U factory%b		factory.adb		6cda7a39 OO PF PK
+U factory%b		factory.adb		ebfc99ed OO PF PK
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
@@ -63,7 +63,7 @@ Z system.tasking%s	s-taskin.adb		s-taskin.ali
 Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
 Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
 
-U factory%s		factory.ads		351dbf7a EE OO PK
+U factory%s		factory.ads		3be75f86 EE OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
@@ -94,8 +94,8 @@ D a-tags.ads		20180524051738 491b781d ada.tags%s
 D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
-D factory.ads		20181213174400 7ab08779 factory%s
-D factory.adb		20181215175554 166afd40 factory%b
+D factory.ads		20181221121926 744a6785 factory%s
+D factory.adb		20181221121948 9fb6fe68 factory%b
 D fifo.ads		20181213174400 c7b08b59 fifo%s
 D fifo.adb		20181213174400 42862f34 fifo%b
 D interfac.ads		20180524051736 5ab55268 interfaces%s
@@ -143,43 +143,48 @@ D s-win32.ads		20180524051736 b7f96285 system.win32%s
 X 1 ada.ads
 16K9*Ada 20e8 19|1r6 2r5
 X 5 a-cdlili.ads
-51R9 List<10|43R9>
+51R9*List<10|43R9>
 X 12 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[5|69]>
 X 16 a-textio.ads
 49K13*Text_IO 471e16 19|1w10 2r9
-242U14*Put 20|43s10 44s10
-263U14*Put_Line 20|26s7 32s7 45s10 49s7
+242U14*Put 20|29s10 30s10 46s10 47s10 67s10 68s10
+263U14*Put_Line 20|25s7 31s10 35s7 48s10 52s7 69s10 73s7
 X 19 factory.ads
-4K9*Factory 15l5 15e12 20|1b14 74l5 74t12
-6t9*Machine_A 20|22b14 33t7 70r7
-7Y13 Start 20|25b14 70s17
-10t9*Machine_B 20|35b14 55t7 71r7
-11Y13 Start 20|48b14 71s17
-14U14*run 20|67b14 72t7
+4K9*Factory 19l5 19e12 20|1b14 101l5 101t12
+6t9*Machine_A 20|21b14 36t7 94r7
+7Y13 Start 20|24b14 94s17
+10t9*Machine_B 20|38b14 59t7 96r7
+11Y13 Start 20|51b14 96s17
+14t9*Machine_C 20|61b14 79t7 98r7
+15Y13 Start 20|72b14 98s17
+18U14*run 20|91b14 99t7
 X 20 factory.adb
 3I12 Percent{integer} 9r18
 4I12 nonNegative{integer} 8r15
-6R9 Bottle 11e17 12r33 61r21
-8i10*id{4I12} 44r18 62m14
-9i10*filled{3I12} 39r20 40m17 40r31
-10b10*capped{boolean}
-12P9 Bottle_access(6R9) 14r36 23r13 36r13 58r10
+6R9 Bottle 11e17 12r33 85r21
+8i10*id{4I12} 30r18 47r18 68r18 86m14
+9i10*filled{3I12} 42r20 43m17 43r31
+10b10*capped{boolean} 65m14
+12P9 Bottle_access(6R9) 14r36 22r13 39r13 62r12 82r10
 14K12 Bottle_Fifo[21|4] 15r8
-17r4 Fifo_init{21|5R10[14]} 28m10 28r10 63m10 63r10
-18r4 Fifo_AB{21|5R10[14]} 29m10 29r10 51m10 51r10
-23p7 bot{12P9} 28m24 28r24 29r23 30r20
-36p7 bot{12P9} 39r16 40r13 40r27 44r14 51m22 51r22 53r20
-37U17 fillBottle 37b17 46t10 52s10
-57U14 init 57b14 65t7 69s7
-58p4 bot{12P9} 61m10 62r10 63r25
-60i11 I{integer} 62r20
+17r4 Fifo_init{21|5R10[14]} 27m10 27r10 87m10 87r10
+18r4 Fifo_AB{21|5R10[14]} 28m10 28r10 54m10 54r10
+19r4 Fifo_BC{21|5R10[14]} 56m10 56r10 75m10 75r10
+22p7 bot{12P9} 27m24 27r24 28r23 30r14 33r20
+39p7 bot{12P9} 42r16 43r13 43r27 47r14 54m22 54r22 56r23 57r20
+40U17 fillBottle 40b17 49t10 55s10
+62p7 bot{12P9} 65r10 68r14 75m22 75r22 77r20
+63U17 capBottle 63b17 70t10 76s10
+81U14 init 81b14 89t7 93s7
+82p4 bot{12P9} 85m10 86r10 87r25
+84i11 I{integer} 86r20
 X 21 fifo.ads
 4k10*Fifo 19|1w19 20|14r31 21|13e10
-5R10*Fifo_Type<5|51R9[10[20|14]]> 20|17r16[14] 18r14[14]
-6U15*Push 20|29s18[14] 63s20[14]
-7U15*Pop 20|28s20[14] 51s18[14]
+5R10*Fifo_Type<5|51R9[10[20|14]]> 20|17r16[14] 18r14[14] 19r14[14]
+6U15*Push 20|28s18[14] 56s18[14] 87s20[14]
+7U15*Pop 20|27s20[14] 54s18[14] 75s18[14]
 X 27 system.ads
 67M9*Address
 X 37 s-memory.ads
