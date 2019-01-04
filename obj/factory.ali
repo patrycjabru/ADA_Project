@@ -34,7 +34,7 @@ RV SPARK_05
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=3
 
-U factory%b		factory.adb		f8788299 OO PF PK
+U factory%b		factory.adb		49051697 OO PF PK
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
@@ -101,7 +101,7 @@ D a-titest.ads		20180524051738 f6e9e057 ada.text_io.text_streams%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
 D factory.ads		20190102230424 744a6785 factory%s
-D factory.adb		20190104113708 b13998f6 factory%b
+D factory.adb		20190104182744 00440cf8 factory%b
 D fifo.ads		20190102230424 c7b08b59 fifo%s
 D fifo.adb		20190102230424 42862f34 fifo%b
 D interfac.ads		20180524051736 5ab55268 interfaces%s
@@ -147,77 +147,76 @@ D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
 D s-win32.ads		20180524051736 b7f96285 system.win32%s
 X 1 ada.ads
-16K9*Ada 20e8 21|1r6 2r5 22|1r6 4r1 5r1 6r1 18r12 21r20 21r44 22r21 22r45
-. 25r31 26r9 28r32 29r9
+16K9*Ada 20e8 21|1r6 2r5 22|1r6 4r1 5r1 6r1 19r12 22r20 22r44 23r21 23r45
+. 26r31 27r9 29r32 30r9
 X 5 a-cdlili.ads
-51R9 List<10|43R9>
+51R9*List<10|43R9>
 X 11 a-ioexce.ads
 18K13*IO_Exceptions 30e22 22|6w5
 X 12 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[5|69]>
 X 14 a-stream.ads
-36K13*Streams 87e16 22|4r5 25r35 28r36
-39H9*Root_Stream_Type 70e64 22|25r43 28r44
+36K13*Streams 87e16 22|4r5 26r35 29r36
+39H9*Root_Stream_Type 70e64 22|26r43 29r44
 X 15 a-ststio.ads
 39K21*Stream_IO 223e26 22|4w13
 X 17 a-textio.ads
-49K13*Text_IO 471e16 21|1w10 2r9 22|1w10 5r5 18r16 21r24 21r48 22r25 22r49
-. 26r13 29r13
-52P9*File_Type 22|21r32 22r33
-117V13*Standard_Input{52P9} 22|21s56 22s57
-242U14*Put 22|34s7 43s6 82s10 83s10 99s10 100s10 120s10 121s10
-263U14*Put_Line 22|70s7 73s9 75s10 84s10 88s7 101s10 105s7 122s10 126s7
+49K13*Text_IO 471e16 21|1w10 2r9 22|1w10 5r5 19r16 22r24 22r48 23r25 23r49
+. 27r13 30r13
+52P9*File_Type 22|22r32 23r33
+117V13*Standard_Input{52P9} 22|22s56 23s57
+242U14*Put 22|35s7 44s6 81s10 82s10 98s10 99s10 119s10 120s10
+263U14*Put_Line 22|70s7 73s9 75s10 83s10 87s7 100s10 104s7 121s10 125s7
 X 18 a-titest.ads
-17K21*Text_Streams 23e29 22|5w13 26r21 29r21
+17K21*Text_Streams 23e29 22|5w13 27r21 30r21
 19P9*Stream_Access(14|39R9)
-21V13*Stream{19P9} 22|26s34 29s34
-21p21 File{17|52P9} 22|26r42 29r42
+21V13*Stream{19P9} 22|27s34 30s34
+21p21 File{17|52P9} 22|27r42 30r42
 X 21 factory.ads
-4K9*Factory 19l5 19e12 22|10b14 155l5 155t12
-6t9*Machine_A 22|65b14 89t7 148r7
-7Y13 Start 22|69b14 148s17
-10t9*Machine_B 22|91b14 112t7 150r7
-11Y13 Start 22|104b14 150s17
-14t9*Machine_C 22|114b14 132t7 152r7
-15Y13 Start 22|125b14 152s17
-18U14*run 22|144b14 153t7
+4K9*Factory 19l5 19e12 22|10b14 154l5 154t12
+6t9*Machine_A 22|66b14 88t7 147r7
+7Y13 Start 22|69b14 147s17
+10t9*Machine_B 22|90b14 111t7 149r7
+11Y13 Start 22|103b14 149s17
+14t9*Machine_C 22|113b14 131t7 151r7
+15Y13 Start 22|124b14 151s17
+18U14*run 22|143b14 152t7
 X 22 factory.adb
-12I12 Percent{integer} 52r18
-13I12 nonNegative{integer} 51r15
-14B12 typeofWater{boolean} 32r17 67r17
+12I12 Percent{integer} 53r18
+13I12 nonNegative{integer} 52r15
+14b4 typeofWater{boolean} 39m6 41m7 72r10
 15A12 capacity{string}<integer>
-17U14 Preferences 17b14 47l8 47t19 147s7
-21p7 Input_File{17|52P9} 26r50
-22p7 Input_File2{17|52P9} 29r50
-25p9 Input_Stream(14|39R9) 35r23
-28p9 Input_Stream2(14|39R9) 44r22
-31e7 x{character} 35m37 35r37
-31e9 y{character} 44m36 44r36
-32b7 typeofW{14E12}
-49R9 Bottle 54e17 55r33 138r21
-51i10*id{13I12} 83r18 100r18 121r18 139m14
-52i10*filled{12I12} 95r20 96m17 96r31
-53b10*capped{boolean} 118m14
-55P9 Bottle_access(49R9) 57r36 66r13 92r13 115r12 135r10
-57K12 Bottle_Fifo[23|4] 58r8
-60r4 Fifo_init{23|5R10[57]} 80m10 80r10 140m10 140r10
-61r4 Fifo_AB{23|5R10[57]} 81m10 81r10 107m10 107r10
-62r4 Fifo_BC{23|5R10[57]} 109m10 109r10 128m10 128r10
-66p7 bot{55P9} 80m24 80r24 81r23 83r14 86r20
-67b7 typeofW{14E12} 72r10
-92p7 bot{55P9} 95r16 96r13 96r27 100r14 107m22 107r22 109r23 110r20
-93U17 fillBottle 93b17 102t10 108s10
-115p7 bot{55P9} 118r10 121r14 128m22 128r22 130r20
-116U17 capBottle 116b17 123t10 129s10
-134U14 init 134b14 142t7 146s7
-135p4 bot{55P9} 138m10 139r10 140r25
-137i11 I{integer} 139r20
+16E12 x{character}
+18U14 Preferences 18b14 48l8 48t19 146s7
+22p7 Input_File{17|52P9} 27r50
+23p7 Input_File2{17|52P9} 30r50
+26p9 Input_Stream(14|39R9) 36r23
+29p9 Input_Stream2(14|39R9) 45r22
+32e7 x{character} 36m37 36r37 38r8
+32e9 y{character} 45m36 45r36
+50R9 Bottle 55e17 56r33 137r21
+52i10*id{13I12} 82r18 99r18 120r18 138m14
+53i10*filled{12I12} 94r20 95m17 95r31
+54b10*capped{boolean} 117m14
+56P9 Bottle_access(50R9) 58r36 67r13 91r13 114r12 134r10
+58K12 Bottle_Fifo[23|4] 59r8
+61r4 Fifo_init{23|5R10[58]} 79m10 79r10 139m10 139r10
+62r4 Fifo_AB{23|5R10[58]} 80m10 80r10 106m10 106r10
+63r4 Fifo_BC{23|5R10[58]} 108m10 108r10 127m10 127r10
+67p7 bot{56P9} 79m24 79r24 80r23 82r14 85r20
+91p7 bot{56P9} 94r16 95r13 95r27 99r14 106m22 106r22 108r23 109r20
+92U17 fillBottle 92b17 101t10 107s10
+114p7 bot{56P9} 117r10 120r14 127m22 127r22 129r20
+115U17 capBottle 115b17 122t10 128s10
+133U14 init 133b14 141t7 145s7
+134p4 bot{56P9} 137m10 138r10 139r25
+136i11 I{integer} 138r20
 X 23 fifo.ads
-4k10*Fifo 21|1w19 22|57r31 23|13e10
-5R10*Fifo_Type<5|51R9[10[22|57]]> 22|60r16[57] 61r14[57] 62r14[57]
-6U15*Push 22|81s18[57] 109s18[57] 140s20[57]
-7U15*Pop 22|80s20[57] 107s18[57] 128s18[57]
+4k10*Fifo 21|1w19 22|58r31 23|13e10
+5R10*Fifo_Type<5|51R9[10[22|58]]> 22|61r16[58] 62r14[58] 63r14[58]
+6U15*Push 22|80s18[58] 108s18[58] 139s20[58]
+7U15*Pop 22|79s20[58] 106s18[58] 127s18[58]
 X 29 system.ads
 67M9*Address
 X 39 s-memory.ads

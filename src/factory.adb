@@ -11,8 +11,9 @@ package body Factory is
    
    subtype Percent is Integer range 0 .. 100;
    subtype nonNegative is Integer range 0 .. Integer'Last;
-   subtype typeofWater is Boolean;
+   typeofWater:Boolean;
    subtype capacity is String;
+   subtype x is Character;
    
    procedure Preferences is
        Use Ada.Text_IO;
@@ -29,16 +30,16 @@ package body Factory is
         Ada.Text_IO.Text_Streams.Stream( File => Input_File2);
       
       x,y :  Character;
-      typeofW : typeofWater;
+      
    begin
       Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
       Character'Read( Input_Stream, x );
       
-     -- if(x='a') then
-       -- typeofW:=True;
-     -- else
-       -- typeofW:=False;
-      -- end if;
+    if(x='a') then
+     typeofWater:=True;
+    else
+      typeofWater:=False;
+    end if;
      
      Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l");
       Character'Read(Input_Stream2,y);
@@ -64,16 +65,14 @@ package body Factory is
    
    task body Machine_A is
       bot : Bottle_access;
-      typeofW : typeofWater;
    begin
       accept Start;	
       Put_Line("Machine_A: start");
       
-      if(typeofW=true) then
+      if(typeofWater=true) then
         Put_Line("Production of sparkling water starts!");
       else
          Put_Line("Production of regular water starts:");
-           
       end if;
       
       loop
