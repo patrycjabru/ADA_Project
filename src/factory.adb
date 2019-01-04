@@ -1,7 +1,50 @@
+With Ada.Text_IO;
+
+With
+Ada.Streams.Stream_IO,
+Ada.Text_IO.Text_Streams,
+Ada.IO_Exceptions;
+
+
+
 package body Factory is
    
    subtype Percent is Integer range 0 .. 100;
    subtype nonNegative is Integer range 0 .. Integer'Last;
+   subtype typeofWater is Boolean;
+   subtype capacity is String;
+   
+   procedure Preferences is
+       Use Ada.Text_IO;
+
+    -- Get the Standard_Input.
+      Input_File : Ada.Text_IO.File_Type:= Ada.Text_IO.Standard_Input;
+      Input_File2 : Ada.Text_IO.File_Type:= Ada.Text_IO.Standard_Input;
+
+    -- Create a stream from the Standard Input.
+        Input_Stream : Access Ada.Streams.Root_Stream_Type'Class:=
+        Ada.Text_IO.Text_Streams.Stream( File => Input_File );
+      
+        Input_Stream2 : Access Ada.Streams.Root_Stream_Type'Class:=
+        Ada.Text_IO.Text_Streams.Stream( File => Input_File2);
+      
+      x,y :  Character;
+      typeofW : typeofWater;
+   begin
+      Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
+      Character'Read( Input_Stream, x );
+      
+     -- if(x='a') then
+       -- typeofW:=True;
+     -- else
+       -- typeofW:=False;
+      -- end if;
+     
+     Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l");
+      Character'Read(Input_Stream2,y);
+      
+   
+   end Preferences;
    
    type Bottle is
       record
@@ -18,11 +61,21 @@ package body Factory is
    Fifo_AB : Fifo_Type;
    Fifo_BC : Fifo_Type;
    
+   
    task body Machine_A is
       bot : Bottle_access;
+      typeofW : typeofWater;
    begin
       accept Start;	
       Put_Line("Machine_A: start");
+      
+      if(typeofW=true) then
+        Put_Line("Production of sparkling water starts!");
+      else
+         Put_Line("Production of regular water starts:");
+           
+      end if;
+      
       loop
          Fifo_init.Pop(bot);
          Fifo_AB.Push(bot);
@@ -91,6 +144,7 @@ package body Factory is
    procedure run is
    begin
       init;
+      Preferences;
       Machine_A.Start;
       delay(5.0);
       Machine_B.Start;

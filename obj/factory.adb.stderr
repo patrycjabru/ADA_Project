@@ -1,0 +1,2 @@
+factory.adb:32:07: warning: variable "typeofW" is never read and never assigned
+factory.adb:67:07: warning: variable "typeofW" is read but never assigned
