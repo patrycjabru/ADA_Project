@@ -2,15 +2,7 @@
 <Locations >
   <Project>
     <vfs_file>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_file>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\GNAT\2018\bin\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
-      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 9" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
@@ -18,15 +10,27 @@
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\main.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 9" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
-      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\fifo.adb</vfs_file>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 19" line=" 15" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 45" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 15" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 20" line=" 45" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>

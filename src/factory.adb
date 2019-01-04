@@ -12,39 +12,42 @@ package body Factory is
    subtype Percent is Integer range 0 .. 100;
    subtype nonNegative is Integer range 0 .. Integer'Last;
    typeofWater:Boolean;
-   subtype capacity is String;
+   capacity:String(1..5);
    subtype x is Character;
    
    procedure Preferences is
-       Use Ada.Text_IO;
-
-    -- Get the Standard_Input.
-      Input_File : Ada.Text_IO.File_Type:= Ada.Text_IO.Standard_Input;
-      Input_File2 : Ada.Text_IO.File_Type:= Ada.Text_IO.Standard_Input;
-
-    -- Create a stream from the Standard Input.
-        Input_Stream : Access Ada.Streams.Root_Stream_Type'Class:=
-        Ada.Text_IO.Text_Streams.Stream( File => Input_File );
-      
-        Input_Stream2 : Access Ada.Streams.Root_Stream_Type'Class:=
-        Ada.Text_IO.Text_Streams.Stream( File => Input_File2);
-      
-      x,y :  Character;
-      
+      Use Ada.Text_IO;
    begin
-      Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
-      Character'Read( Input_Stream, x );
-      
-    if(x='a') then
-     typeofWater:=True;
-    else
-      typeofWater:=False;
-    end if;
+      Ada.Text_IO.Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
+      declare
+      S1 : String := Ada.Text_IO.Get_Line;
+      begin
+         Ada.Text_IO.Put_Line (S1);
+         
+         if(S1="a") then
+         typeofWater:=True;
+         else
+         typeofWater:=False;
+         end if;
      
-     Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l");
-      Character'Read(Input_Stream2,y);
+      end;
       
-   
+      Ada.Text_IO.Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l:");
+      declare
+      S2 : String := Ada.Text_IO.Get_Line;
+      begin
+         Ada.Text_IO.Put_Line (S2);
+         if(S2="a") then
+         capacity:="500ml";
+         elsif (S2="b") then
+         capacity:="1litr";
+         else
+         capacity:="1,5 l";    
+         end if;
+      end;
+      
+   new_line;
+      
    end Preferences;
    
    type Bottle is
@@ -74,6 +77,10 @@ package body Factory is
       else
          Put_Line("Production of regular water starts:");
       end if;
+      
+      Put_Line("Capacity:");
+      put(capacity);
+      new_line;
       
       loop
          Fifo_init.Pop(bot);
