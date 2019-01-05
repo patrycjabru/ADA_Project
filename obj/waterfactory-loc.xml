@@ -2,7 +2,7 @@
 <Locations >
   <Project>
     <vfs_file>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_file>
-    <file_marker column=" 1" line=" 9" >
+    <file_marker column=" 2" line=" 22" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
@@ -10,7 +10,7 @@
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\main.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 9" >
+    <file_marker column=" 2" line=" 22" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
@@ -18,19 +18,383 @@
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 19" line=" 15" >
+    <file_marker column=" 29" line=" 62" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 24" line=" 45" >
+    <file_marker column=" 3" line=" 30" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 15" >
+    <file_marker column=" 25" line=" 55" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 20" line=" 45" >
+    <file_marker column=" 3" line=" 30" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 30" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 65" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2018\lib\gcc\x86_64-pc-mingw32\7.3.1\adainclude\i-c.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 30" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 63" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 30" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 65" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2018\lib\gcc\x86_64-pc-mingw32\7.3.1\adainclude\i-c.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 18" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 153" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 20" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 18" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 20" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 128" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 20" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 127" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 125" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 153" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 153" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 153" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 128" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 153" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 29" line=" 102" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 29" line=" 25" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 12" line=" 117" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 64" line=" 131" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 150" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 125" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 34" line=" 131" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 150" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 130" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 125" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 131" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 65" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2018\lib\gcc\x86_64-pc-mingw32\7.3.1\adainclude\i-c.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 34" line=" 131" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 131" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 125" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 133" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 112" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 105" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 112" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 173" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 173" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 29" line=" 113" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 112" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 132" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 115" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 125" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 121" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 154" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 155" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 18" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 149" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 42" line=" 134" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 148" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 148" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 33" line=" 136" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 148" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 7" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 33" line=" 136" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 12" line=" 53" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 110" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 148" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 148" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 19" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 149" >
+      <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
+      <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 4" line=" 19" >
       <vfs_project>C:\Users\maria\Desktop\ADA_Project\waterfactory.gpr</vfs_project>
       <vfs_file>C:\Users\maria\Desktop\ADA_Project\src\factory.adb</vfs_file>
     </file_marker>

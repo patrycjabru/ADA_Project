@@ -3,7 +3,8 @@ With Ada.Text_IO;
 With
 Ada.Streams.Stream_IO,
 Ada.Text_IO.Text_Streams,
-Ada.IO_Exceptions;
+     Ada.IO_Exceptions;
+With GNAT.OS_Lib;
 
 
 
@@ -14,9 +15,23 @@ package body Factory is
    typeofWater:Boolean;
    capacity:String(1..5);
    subtype x is Character;
+   capacity_b: Float; --wybrana pojemnosc butelki
+   mach_empty:Boolean; --info czy maszyna to nalewania jest pusta
+   mach_filling: Short_Float:=5.0; --zawartosc maszyny wypelniajacej
    
-   procedure Preferences is
+ type Bottle is
+      record
+         id : nonNegative;
+         filled: Integer := 0;
+         capped: Boolean := false;
+      end record;
+   type Bottle_access is access Bottle;
+   
+  
+   
+    procedure Preferences is
       Use Ada.Text_IO;
+      
    begin
       Ada.Text_IO.Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
       declare
@@ -38,11 +53,14 @@ package body Factory is
       begin
          Ada.Text_IO.Put_Line (S2);
          if(S2="a") then
-         capacity:="500ml";
+            capacity:="0,5 l";
+            capacity_b:=0.5;
          elsif (S2="b") then
-         capacity:="1litr";
+            capacity:="1,0 l";
+            capacity_b:=1.0;
          else
-         capacity:="1,5 l";    
+            capacity:="1,5 l";  
+            capacity_b:=1.5;
          end if;
       end;
       
@@ -50,13 +68,6 @@ package body Factory is
       
    end Preferences;
    
-   type Bottle is
-      record
-         id : nonNegative;
-         filled: Percent := 0;
-         capped: Boolean := false;
-      end record;
-   type Bottle_access is access Bottle;
    
    package Bottle_Fifo is new Fifo(Bottle_access);
    use Bottle_Fifo;
@@ -81,6 +92,7 @@ package body Factory is
       Put_Line("Capacity:");
       put(capacity);
       new_line;
+      Put_Line("Machine's filling: "& mach_filling'Img);
       
       loop
          Fifo_init.Pop(bot);
@@ -95,16 +107,52 @@ package body Factory is
    end;
      
    task body Machine_B is 
+      Use Ada.Text_IO;
+      
       bot : Bottle_access;
+      fill:Short_Float:=0.0;
+      inc: Short_Float;
+      
       procedure fillBottle is
       begin
-         while bot.filled < 100 loop
+         
+          if(capacity_b=0.5) then
+            inc:=0.25;
+         elsif (capacity_b=1.0) then
+            inc:=0.5;
+         else
+            inc:=0.75;
+         end if;
+         
+         new_line;
+         Put_Line("Filling process....");
+         while bot.filled <= 100 loop
+            if(bot.filled mod 50=0) then
+               Put(bot.filled'Img & "%  - " & fill'Img & " l");
+               fill:=fill+inc;
+               new_line;
+               mach_filling:=mach_filling-inc;
+               
+              -- if(mach_filling<=0.0) then
+                --  declare
+                  --   S : String := Ada.Text_IO.Get_Line;
+                  --begin
+                    -- Put_Line("Filling machine is empty! Type 'a' to fill it or 'b' to abort the process!");
+                    -- Ada.Text_IO.Put_Line (S);
+                     --if(S="a") then
+                       -- mach_filling:=5.0;
+                     --else   
+                       -- GNAT.OS_Lib.OS_Exit (0);
+                     --end if;   
+                  --end;
+               
+               --end if;  
+            end if;   
             bot.filled := bot.filled + 1;
             delay(0.01);
          end loop;
-         Put("Bottle ");
-         Put(bot.id'Img);
-         Put_Line(" filled!");
+         fill:=0.0;
+         Put_Line("Bottle "& bot.id'Img &" filled!");
       end;
    begin
       accept Start;
