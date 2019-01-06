@@ -14,6 +14,10 @@ package Factory is
    task Machine_C is 
       entry Start;
    end Machine_C;
+   
+   task Machine_D is 
+      entry Start;
+   end Machine_D;
 
    procedure run;
 end Factory;

@@ -1,52 +1,48 @@
-With Ada.Text_IO;
-
-With
+With Ada.Text_IO,
 Ada.Streams.Stream_IO,
 Ada.Text_IO.Text_Streams,
-     Ada.IO_Exceptions;
+Ada.IO_Exceptions;
 With GNAT.OS_Lib;
 
 
 
 package body Factory is
    
-   subtype Percent is Integer range 0 .. 100;
-   subtype nonNegative is Integer range 0 .. Integer'Last;
-   typeofWater:Boolean;
+   subtype Percent is Integer range 0 .. 100; --measurment of bottle filling
+   subtype nonNegative is Integer range 0 .. Integer'Last; -- bottle id type
+   type waterType is (regular, sparkling); -- factory provides difffrent types of water
+   typeofWater:waterType; 
    capacity:String(1..5);
    subtype x is Character;
-   capacity_b: Float; --wybrana pojemnosc butelki
-   mach_empty:Boolean; --info czy maszyna to nalewania jest pusta
-   mach_filling: Short_Float:=5.0; --zawartosc maszyny wypelniajacej
+   capacity_b: Float; -- chosen capacity of bottles
+   mach_empty:Boolean; -- info about empty water container
+   water_filling: Short_Float; -- amount of water in filling machine container
+   caps_filling: nonNegative; -- amount of caps in capping machine container
+   labels_filling: nonNegative; -- amount of labels in labeling machine container
    
- type Bottle is
+   type Bottle is
       record
          id : nonNegative;
          filled: Integer := 0;
          capped: Boolean := false;
+         labeled: Boolean := false;
       end record;
    type Bottle_access is access Bottle;
    
-  
-   
-    procedure Preferences is
-      Use Ada.Text_IO;
-      
+   procedure Preferences is -- initial set up of the factory
+      Use Ada.Text_IO;   
    begin
       Ada.Text_IO.Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
       declare
       S1 : String := Ada.Text_IO.Get_Line;
       begin
          Ada.Text_IO.Put_Line (S1);
-         
          if(S1="a") then
-         typeofWater:=True;
+         typeofWater:=sparkling;
          else
-         typeofWater:=False;
+         typeofWater:=regular;
          end if;
-     
       end;
-      
       Ada.Text_IO.Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l:");
       declare
       S2 : String := Ada.Text_IO.Get_Line;
@@ -63,27 +59,26 @@ package body Factory is
             capacity_b:=1.5;
          end if;
       end;
-      
    new_line;
-      
    end Preferences;
    
-   
-   package Bottle_Fifo is new Fifo(Bottle_access);
+   package Bottle_Fifo is new Fifo(Bottle_access); -- creating production lines
    use Bottle_Fifo;
    
    Fifo_init : Fifo_Type;
    Fifo_AB : Fifo_Type;
    Fifo_BC : Fifo_Type;
+   Fifo_CD : Fifo_Type;
+   Fifo_end : Fifo_Type;
    
    
-   task body Machine_A is
+   task body Machine_A is -- first machine - takes bottles from bottle container and puts them on first line 
       bot : Bottle_access;
    begin
       accept Start;	
       Put_Line("Machine_A: start");
       
-      if(typeofWater=true) then
+      if(typeofWater=sparkling) then
         Put_Line("Production of sparkling water starts!");
       else
          Put_Line("Production of regular water starts:");
@@ -92,7 +87,7 @@ package body Factory is
       Put_Line("Capacity:");
       put(capacity);
       new_line;
-      Put_Line("Machine's filling: "& mach_filling'Img);
+      Put_Line("Machine's filling: "& water_filling'Img);
       
       loop
          Fifo_init.Pop(bot);
@@ -106,7 +101,7 @@ package body Factory is
       Put_Line("Empty bottle container!");
    end;
      
-   task body Machine_B is 
+   task body Machine_B is -- second machine -- takes bottles from first line, fills them and puts them on second line
       Use Ada.Text_IO;
       
       bot : Bottle_access;
@@ -115,7 +110,6 @@ package body Factory is
       
       procedure fillBottle is
       begin
-         
           if(capacity_b=0.5) then
             inc:=0.25;
          elsif (capacity_b=1.0) then
@@ -128,10 +122,12 @@ package body Factory is
          Put_Line("Filling process....");
          while bot.filled <= 100 loop
             if(bot.filled mod 50=0) then
-               Put(bot.filled'Img & "%  - " & fill'Img & " l");
+               Put(bot.filled'Img & "%  - ");
+               Put(fill'Img);
+               Put(" l");
                fill:=fill+inc;
                new_line;
-               mach_filling:=mach_filling-inc;
+               water_filling:=water_filling-inc;
                
               -- if(mach_filling<=0.0) then
                 --  declare
@@ -165,10 +161,11 @@ package body Factory is
       end loop;
    end;
    
-   task body Machine_C is
+   task body Machine_C is -- third machine - takes bottles from second line, capps them and puts them on third line
       bot: Bottle_access;
       procedure capBottle is
       begin
+         caps_filling := caps_filling - 1; -- exception when negative value!
          bot.capped := True;
          delay(1.0);
          Put("Bottle ");
@@ -181,11 +178,36 @@ package body Factory is
       loop
          Fifo_BC.Pop(bot);
          capBottle;
+         Fifo_CD.Push(bot);
          exit when bot = null;
       end loop;
    end;
    
-   procedure init is
+   task body Machine_D is -- forth machine - takse bottles from third line, label them and puts them in final package
+      bot: Bottle_access;
+      procedure labelBottle is
+      begin
+         labels_filling := labels_filling - 1; -- exception when negative value!
+         bot.labeled := True;
+         delay(1.0);
+         Put("Bottle ");
+         Put(bot.id'Img);
+         Put_Line(" labeled!");
+      end;
+   begin
+      accept Start  do
+      Put_Line("Machine_D: start");
+      loop
+         Fifo_CD.Pop(bot);
+         labelBottle;
+         Fifo_end.Push(bot);
+         Put_Line("Bottle " & bot.id'Img & " packed!");
+         exit when bot = null;
+      end loop;
+      end Start;
+   end;
+   
+   procedure init is -- setting up initial values of containers
    bot : Bottle_access;
    begin
       for I in 0..10 loop
@@ -193,9 +215,12 @@ package body Factory is
          bot.id := I;
          Fifo_init.Push(bot);
       end loop;
+      water_filling := 5.0;
+      caps_filling := 5;
+      labels_filling := 13;
    end;
    
-   procedure run is
+   procedure run is -- starting the production line
    begin
       init;
       Preferences;
@@ -204,6 +229,8 @@ package body Factory is
       Machine_B.Start;
       delay(5.0);
       Machine_C.Start;
+      delay(5.0);
+      Machine_D.Start;
    end;
 
 end Factory;
