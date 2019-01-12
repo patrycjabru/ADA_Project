@@ -5,6 +5,7 @@ package Factory is
 
    task Machine_A is 
       entry Start;
+--        entry Stop;
    end Machine_A;
    
    task Machine_B is 
@@ -18,6 +19,10 @@ package Factory is
    task Machine_D is 
       entry Start;
    end Machine_D;
+   
+--     task Input is 
+--        entry Start;
+--     end Input;
 
    procedure run;
 end Factory;

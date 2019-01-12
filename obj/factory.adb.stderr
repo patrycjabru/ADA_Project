@@ -1,1 +1,1 @@
-factory.adb:18:04: warning: variable "mach_empty" is never read and never assigned
+factory.adb:22:04: warning: variable "inp" is never read and never assigned

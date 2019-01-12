@@ -1,7 +1,7 @@
 With Ada.Text_IO,
 Ada.Streams.Stream_IO,
 Ada.Text_IO.Text_Streams,
-Ada.IO_Exceptions;
+     Ada.IO_Exceptions;
 With GNAT.OS_Lib;
 
 
@@ -15,10 +15,11 @@ package body Factory is
    capacity:String(1..5);
    subtype x is Character;
    capacity_b: Float; -- chosen capacity of bottles
-   mach_empty:Boolean; -- info about empty water container
+   water_empty:Boolean with Atomic; -- info about empty water container
    water_filling: Short_Float; -- amount of water in filling machine container
    caps_filling: nonNegative; -- amount of caps in capping machine container
    labels_filling: nonNegative; -- amount of labels in labeling machine container
+   inp : Character with Atomic;
    
    type Bottle is
       record
@@ -75,39 +76,56 @@ package body Factory is
    task body Machine_A is -- first machine - takes bottles from bottle container and puts them on first line 
       bot : Bottle_access;
    begin
-      accept Start;	
-      Put_Line("Machine_A: start");
+            accept Start;	
+            Put_Line("Machine_A: start");
       
-      if(typeofWater=sparkling) then
-        Put_Line("Production of sparkling water starts!");
-      else
-         Put_Line("Production of regular water starts:");
-      end if;
+            if(typeofWater=sparkling) then
+               Put_Line("Production of sparkling water starts!");
+            else
+               Put_Line("Production of regular water starts:");
+            end if;
       
-      Put_Line("Capacity:");
-      put(capacity);
-      new_line;
-      Put_Line("Machine's filling: "& water_filling'Img);
+            Put_Line("Capacity:");
+            put(capacity);
+            new_line;
+            Put_Line("Machine's filling: "& water_filling'Img);
       
       loop
-         Fifo_init.Pop(bot);
-         Fifo_AB.Push(bot);
-         Put("Bottle ");
-         Put(bot.id'Img);
-         Put_Line(" put on line!");
-         delay(1.0);
-         exit when bot = null;
-      end loop;
+         while water_empty loop
+            null;
+            end loop;
+               Fifo_init.Pop(bot);
+               Fifo_AB.Push(bot);
+               Put("Bottle ");
+               Put(bot.id'Img);
+               Put_Line(" put on line!");
+               delay(1.0);
+               exit when bot = null;
+            end loop;
       Put_Line("Empty bottle container!");
+      
+      
    end;
      
    task body Machine_B is -- second machine -- takes bottles from first line, fills them and puts them on second line
-      Use Ada.Text_IO;
-      
       bot : Bottle_access;
       fill:Short_Float:=0.0;
       inc: Short_Float;
-      
+      S : Character;
+      procedure fillContainer is
+      begin
+         water_empty:=True;
+         Put_Line("Filling machine is empty! Type 'a' to fill it or 'q' to abort the process!");
+         loop 
+            Ada.Text_IO.Get_Immediate(S);
+            if S='a' then
+               water_filling:=5.0;
+               water_empty:=False;
+               exit;
+            end if;
+         end loop;
+      end;
+        
       procedure fillBottle is
       begin
           if(capacity_b=0.5) then
@@ -129,21 +147,10 @@ package body Factory is
                new_line;
                water_filling:=water_filling-inc;
                
-              -- if(mach_filling<=0.0) then
-                --  declare
-                  --   S : String := Ada.Text_IO.Get_Line;
-                  --begin
-                    -- Put_Line("Filling machine is empty! Type 'a' to fill it or 'b' to abort the process!");
-                    -- Ada.Text_IO.Put_Line (S);
-                     --if(S="a") then
-                       -- mach_filling:=5.0;
-                     --else   
-                       -- GNAT.OS_Lib.OS_Exit (0);
-                     --end if;   
-                  --end;
-               
-               --end if;  
-            end if;   
+               if(water_filling<=0.0) then                  
+                  fillContainer;
+                 end if;  
+              end if;   
             bot.filled := bot.filled + 1;
             delay(0.01);
          end loop;
@@ -176,6 +183,9 @@ package body Factory is
       accept Start;
       Put_Line("Machine_C: start");
       loop
+         while water_empty loop
+            null;
+         end loop;
          Fifo_BC.Pop(bot);
          capBottle;
          Fifo_CD.Push(bot);
@@ -197,7 +207,10 @@ package body Factory is
    begin
       accept Start  do
       Put_Line("Machine_D: start");
-      loop
+         loop
+         while water_empty loop
+            null;
+         end loop;
          Fifo_CD.Pop(bot);
          labelBottle;
          Fifo_end.Push(bot);
@@ -206,6 +219,22 @@ package body Factory is
       end loop;
       end Start;
    end;
+     
+--       task body Input is 
+--          answer : Character;
+--       begin
+--          accept Start do
+--             while True loop
+--             Ada.Text_IO.Get_Immediate(answer);
+--             if answer = 'q' then
+--                   GNAT.OS_Lib.OS_Exit(0);
+--             elsif answer = 'a'then 
+--                  inp := answer;
+--             end if;
+--          end loop;
+--          end Start;
+--       end;
+      
    
    procedure init is -- setting up initial values of containers
    bot : Bottle_access;
@@ -215,22 +244,24 @@ package body Factory is
          bot.id := I;
          Fifo_init.Push(bot);
       end loop;
-      water_filling := 5.0;
-      caps_filling := 5;
+      water_filling := 50.0;
+      caps_filling := 15;
       labels_filling := 13;
    end;
    
    procedure run is -- starting the production line
    begin
-      init;
+--        Input.Start;
       Preferences;
+      init;
       Machine_A.Start;
       delay(5.0);
-      Machine_B.Start;
-      delay(5.0);
-      Machine_C.Start;
-      delay(5.0);
-      Machine_D.Start;
+        Machine_B.Start;
+        delay(5.0);
+        Machine_C.Start;
+        delay(5.0);
+        Machine_D.Start;
+--          Input.Start;
    end;
 
 end Factory;
