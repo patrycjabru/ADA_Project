@@ -1,34 +1,34 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-C:\Users\maria\Documents\ADA_Project\waterfactory.gpr
-20190115102232
+D:\aSTUDIA\ADA_project\waterfactory.gpr
+20190114160232
 [BOUND OBJECT FILES]
-C:\Users\maria\Documents\ADA_Project\obj\fifo.o
-C:\Users\maria\Documents\ADA_Project\obj\jewl.o
-C:\Users\maria\Documents\ADA_Project\obj\jewl-win32_interface.o
-C:\Users\maria\Documents\ADA_Project\obj\jewl-canvas_implementation.o
-C:\Users\maria\Documents\ADA_Project\obj\jewl-message_handling.o
-C:\Users\maria\Documents\ADA_Project\obj\jewl-window_implementation.o
-C:\Users\maria\Documents\ADA_Project\obj\jewl-windows.o
-C:\Users\maria\Documents\ADA_Project\obj\factory.o
-C:\Users\maria\Documents\ADA_Project\obj\main.o
+D:\aSTUDIA\ADA_project\obj\fifo.o
+D:\aSTUDIA\ADA_project\obj\jewl.o
+D:\aSTUDIA\ADA_project\obj\jewl-win32_interface.o
+D:\aSTUDIA\ADA_project\obj\jewl-canvas_implementation.o
+D:\aSTUDIA\ADA_project\obj\jewl-message_handling.o
+D:\aSTUDIA\ADA_project\obj\jewl-window_implementation.o
+D:\aSTUDIA\ADA_project\obj\jewl-windows.o
+D:\aSTUDIA\ADA_project\obj\factory.o
+D:\aSTUDIA\ADA_project\obj\main.o
 [GENERATED SOURCE FILES]
 b__main.ads
 b__main.adb
 b__main.ali
 [RESULTING OPTIONS]
--LC:\Users\maria\Documents\ADA_Project\obj\
--LC:\Users\maria\Documents\ADA_Project\obj\
--LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-LD:\aSTUDIA\ADA_project\obj\
+-LD:\aSTUDIA\ADA_project\obj\
+-LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
 -static
 -static-libgcc
 -luser32
 -lgdi32
 -lcomdlg32
 -lwinmm
-C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnarl.a
-C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnarl.a
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
 -Xlinker
 --stack=0x200000,0x1000
 -mthreads

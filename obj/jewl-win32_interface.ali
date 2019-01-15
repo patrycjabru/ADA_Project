@@ -45,9 +45,9 @@ D a-tags.ads		20180524051738 491b781d ada.tags%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-c.ads		20180524051736 5421119b interfaces.c%s
-D jewl.ads		20190115102232 e853f5a4 jewl%s
-D jewl-win32_interface.ads  20190115102232 825052c2 jewl.win32_interface%s
-D jewl-win32_interface.adb  20190115102232 9b3bf34b jewl.win32_interface%b
+D jewl.ads		20070108160000 e853f5a4 jewl%s
+D jewl-win32_interface.ads  20070108160000 825052c2 jewl.win32_interface%s
+D jewl-win32_interface.adb  20070108160000 9b3bf34b jewl.win32_interface%b
 D system.ads		20180524051738 32a08138 system%s
 D s-exctab.ads		20180524051738 54135002 system.exception_table%s
 D s-finmas.ads		20180524051738 7811a767 system.finalization_masters%s

@@ -26,7 +26,7 @@ package body Factory is
    package My_Windows is new JEWL.Windows (Command_Code);
    use My_Windows;
    
-   My_Frame : Frame_Type := Frame (660, 480, "Main Window", Quit);
+   My_Frame : Frame_Type := Frame (660, 480, "Water Factory", Quit);
    ilosc_butelek : nonNegative := 0;
    ilosc_butelek_s : String := "Ilosc butelek: ";
    Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Ilosc butelek: ", Centre);
@@ -39,8 +39,22 @@ package body Factory is
    Log_A4: Label_Type := Label (My_Frame, (20,270), 0, 20, "", Left);
    
    Label_B: Label_Type := Label (My_Frame, (200,110), 0, 20, "label_B", Left);
+   Log_B1: Label_Type := Label (My_Frame, (200,150), 0, 20, "", Left);
+   Log_B2: Label_Type := Label (My_Frame, (200,190), 0, 20, "", Left);
+   Log_B3: Label_Type := Label (My_Frame, (200,230), 0, 20, "", Left);
+   Log_B4: Label_Type := Label (My_Frame, (200,270), 0, 20, "", Left);
+   
    Label_C: Label_Type := Label (My_Frame, (350,110), 0, 20, "label_C", Left);
+   Log_C1: Label_Type := Label (My_Frame, (350,150), 0, 20, "", Left);
+   Log_C2: Label_Type := Label (My_Frame, (350,190), 0, 20, "", Left);
+   Log_C3: Label_Type := Label (My_Frame, (350,230), 0, 20, "", Left);
+   Log_C4: Label_Type := Label (My_Frame, (350,270), 0, 20, "", Left);
+   
    Label_D: Label_Type := Label (My_Frame, (512,110), 0, 20, "label_D", Left);	
+   Log_D1: Label_Type := Label (My_Frame, (512,150), 0, 20, "", Left);
+   Log_D2: Label_Type := Label (My_Frame, (512,190), 0, 20, "", Left);
+   Log_D3: Label_Type := Label (My_Frame, (512,230), 0, 20, "", Left);
+   Log_D4: Label_Type := Label (My_Frame, (512,270), 0, 20, "", Left);
    
    
    type Bottle is
@@ -103,9 +117,9 @@ package body Factory is
       procedure UpdateLabelD(text : in String);
       procedure UpdateMainLabel(text : in String);
       procedure UpdateLogA(text : in String);
---        entry UpdateLogB(text : in String);
---        entry UpdateLogC(text : in String);
---        entry UpdateLogD(text : in String);
+      procedure UpdateLogB(text : in String);
+      procedure UpdateLogC(text : in String);
+      procedure UpdateLogD(text : in String);
    private 
         Sem : Boolean := True; 
    end UpdateGUI;
@@ -114,9 +128,12 @@ package body Factory is
       procedure UpdateLabelA(text : in String) is
          begin
          if  (Sem = True) then
-               Sem := False;
-               Label_A.Set_Text(text);
-               Sem := True;
+             Sem := False;
+             Label_A.Set_Text(text);
+             Label_B.Set_Text(Label_B.Get_Text);
+             Label_C.Set_Text(Label_C.Get_Text);
+             Label_D.Set_Text(Label_D.Get_Text);
+             Sem := True;
          end if;
       end UpdateLabelA;
       
@@ -125,6 +142,8 @@ package body Factory is
          if (Sem = True) then 
              Sem := False;
              Label_B.Set_Text(text);
+             Label_C.Set_Text(Label_C.Get_Text);
+             Label_D.Set_Text(Label_D.Get_Text);
              Sem := True;
          end if;
       end UpdateLabelB;
@@ -132,9 +151,10 @@ package body Factory is
    procedure UpdateLabelC(text : in String) is
        begin
          if  (Sem = True) then
-               Sem := False;
-               Label_C.Set_Text(text);
-               Sem := True;
+            Sem := False;
+            Label_C.Set_Text(text);
+            Label_D.Set_Text(Label_D.Get_Text);
+            Sem := True;
          end if;
    end UpdateLabelC;
       
@@ -159,13 +179,46 @@ package body Factory is
   procedure UpdateLogA(text : in String) is
      begin
         if  (Sem = True) then 
-               Sem := False;
-               Log_A3.Set_Text(Log_A2.Get_Text);
-               Log_A2.Set_Text(Log_A1.Get_Text);
-               Log_A1.Set_Text(text);
-               Sem := True;
+           Sem := False;
+           Log_A3.Set_Text(Log_A2.Get_Text);
+           Log_A2.Set_Text(Log_A1.Get_Text);
+           Log_A1.Set_Text(text);
+           Sem := True;
         end if;
-  end UpdateLogA;
+      end UpdateLogA;
+      
+  procedure UpdateLogB(text : in String) is
+     begin
+        if  (Sem = True) then 
+           Sem := False;
+           Log_B3.Set_Text(Log_B2.Get_Text);
+           Log_B2.Set_Text(Log_B1.Get_Text);
+           Log_B1.Set_Text(text);
+           Sem := True;
+        end if;
+      end UpdateLogB;
+   
+  procedure UpdateLogC(text : in String) is
+     begin
+        if  (Sem = True) then 
+           Sem := False;
+           Log_C3.Set_Text(Log_C2.Get_Text);
+           Log_C2.Set_Text(Log_C1.Get_Text);
+           Log_C1.Set_Text(text);
+           Sem := True;
+        end if;
+      end UpdateLogC;
+
+  procedure UpdateLogD(text : in String) is
+     begin
+        if  (Sem = True) then 
+           Sem := False;
+           Log_D3.Set_Text(Log_D2.Get_Text);
+           Log_D2.Set_Text(Log_D1.Get_Text);
+           Log_D1.Set_Text(text);
+           Sem := True;
+        end if;
+      end UpdateLogD;
 end UpdateGUI;
    
    update : UpdateGUI;
@@ -238,9 +291,7 @@ end UpdateGUI;
          Put_Line("Filling process....");
          while bot.filled <= 100 loop
             if(bot.filled mod 50=0) then
-               Put(bot.filled'Img & "%  - ");
-               Put(fill'Img);
-               Put(" l");
+               --update.UpdateLogB(bot.filled'Img & "%  - " & fill'Img & " l");
                fill:=fill+inc;
                new_line;
                water_filling:=water_filling-inc;
@@ -253,7 +304,7 @@ end UpdateGUI;
             delay(0.01);
          end loop;
          fill:=0.0;
-         Put_Line("Bottle "& bot.id'Img &" filled!");
+         update.UpdateLogB("Bottle "& bot.id'Img &" filled!");
       end;
    begin
       accept Start;
@@ -275,9 +326,7 @@ end UpdateGUI;
          caps_filling := caps_filling - 1; -- exception when negative value!
          bot.capped := True;
          delay(1.0);
-         Put("Bottle ");
-         Put(bot.id'Img);
-         Put_Line(" capped!");
+         update.UpdateLogC("Bottle " & bot.id'Img & " capped!");
       end;
    begin
       accept Start;
@@ -302,9 +351,7 @@ end UpdateGUI;
          labels_filling := labels_filling - 1; -- exception when negative value!
          bot.labeled := True;
          delay(1.0);
-         Put("Bottle ");
-         Put(bot.id'Img);
-         Put_Line(" labeled!");
+         update.UpdateLogD("Bottle " & bot.id'Img & " labeled!");
       end;
    begin
       accept Start  do
@@ -325,22 +372,7 @@ end UpdateGUI;
       end loop;
       end Start;
    end;
-     
---       task body Input is 
---          answer : Character;
---       begin
---          accept Start do
---             while True loop
---             Ada.Text_IO.Get_Immediate(answer);
---             if answer = 'q' then
---                   GNAT.OS_Lib.OS_Exit(0);
---             elsif answer = 'a'then 
---                  inp := answer;
---             end if;
---          end loop;
---          end Start;
---       end;
-      
+   
    
    procedure init is -- setting up initial values of containers
    bot : Bottle_access;
@@ -354,16 +386,10 @@ end UpdateGUI;
       caps_filling := 15;
       labels_filling := 13;
    end;
-   
-   
-   
-   
  
    
    task body GUI is
-
-      procedure my_program is
-      
+      procedure my_program is 
       begin
          Main_label.Set_Text(ilosc_butelek_s);
          Label_A.Set_Text("Label_A");
