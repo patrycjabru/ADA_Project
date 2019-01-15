@@ -80,10 +80,10 @@ D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-c.ads		20180524051736 5421119b interfaces.c%s
 D i-cstrin.ads		20180524051736 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
-D jewl.ads		20190115154930 e853f5a4 jewl%s
-D jewl-canvas_implementation.ads  20190115154930 95a129a8 jewl.canvas_implementation%s
-D jewl-canvas_implementation.adb  20190115154930 65d62f19 jewl.canvas_implementation%b
-D jewl-win32_interface.ads  20190115154930 825052c2 jewl.win32_interface%s
+D jewl.ads		20070108160000 e853f5a4 jewl%s
+D jewl-canvas_implementation.ads  20070108160000 95a129a8 jewl.canvas_implementation%s
+D jewl-canvas_implementation.adb  20070108160000 65d62f19 jewl.canvas_implementation%b
+D jewl-win32_interface.ads  20070108160000 825052c2 jewl.win32_interface%s
 D system.ads		20180524051738 32a08138 system%s
 D s-atacco.ads		20180524051738 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s

@@ -18,19 +18,20 @@ package body Factory is
    capacity_b: Float; -- chosen capacity of bottles
    water_empty:Boolean with Atomic; -- info about empty water container
    water_filling: Short_Float; -- amount of water in filling machine container
+   caps_empty:Boolean with Atomic;
    caps_filling: nonNegative; -- amount of caps in capping machine container
+   labels_empty:Boolean with Atomic;
    labels_filling: nonNegative; -- amount of labels in labeling machine container
---     inp : Character with Atomic;
    
    type Command_Code is (Quit, Load, Save);
    package My_Windows is new JEWL.Windows (Command_Code);
    use My_Windows;
    
    My_Frame : Frame_Type := Frame (660, 480, "Water Factory", Quit);
-   Quit_Button : Button_Type :=Button (My_Frame, (280,380), 80, 25, "Quit", Quit);
    ilosc_butelek : nonNegative := 0;
-   ilosc_butelek_s : String := "Ilosc butelek: ";
-   Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Ilosc butelek: ", Centre);
+   ilosc_butelek_s : String := "Packed bottles: ";
+   Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Packed bottles: ", Centre);
+   Error_Info: Label_Type := Label (My_Frame, (0,400), 0, 20, "", Centre);
    --Type_label: Label_Type := Label (My_Frame, (0,50), 0, 20, "Rodzaj wody: ", Centre);
 
    Label_A: Label_Type := Label (My_Frame, (20,110), 0, 20, "label_A", Left);
@@ -56,7 +57,6 @@ package body Factory is
    Log_D2: Label_Type := Label (My_Frame, (512,190), 0, 20, "", Left);
    Log_D3: Label_Type := Label (My_Frame, (512,230), 0, 20, "", Left);
    Log_D4: Label_Type := Label (My_Frame, (512,270), 0, 20, "", Left);
-   
    
    type Bottle is
       record
@@ -99,7 +99,6 @@ package body Factory is
          end if;
 
       end;
-   new_line;
    end Preferences;
    
    package Bottle_Fifo is new Fifo(Bottle_access); -- creating production lines
@@ -128,12 +127,12 @@ package body Factory is
    
    protected body UpdateGUI is 
       
-      procedure CloseGUI is
-      begin
-          when 'Quit' =>
-      Close (My_Frame);
-      exit;
-      end CloseGUI;   
+--        procedure CloseGUI is
+--        begin
+--            when 'Quit' =>
+--        Close (My_Frame);
+--        exit;
+--        end CloseGUI;   
       
       procedure Refresh is
          begin
@@ -260,7 +259,6 @@ end UpdateGUI;
       bot : Bottle_access;
    begin
             accept Start;	
-            Put_Line("Machine_A: start");
       
             if(typeofWater=sparkling) then
                Put_Line("Production of sparkling water starts!");
@@ -270,24 +268,20 @@ end UpdateGUI;
       
             Put_Line("Capacity:");
             put(capacity);
-            new_line;
             Put_Line("Machine's filling: "& water_filling'Img);
       
       loop
-         while water_empty loop
+         while water_empty or caps_empty or labels_empty loop
             null;
             end loop;
                Fifo_init.Pop(bot);
-         update.UpdateLabelA(bot.id'Img);
-         --update.Refresh;
+               update.UpdateLabelA(bot.id'Img);
                Fifo_AB.Push(bot);
-               Put_Line("Bottle " & bot.id'Img & " put on line!");
-         update.UpdateLogA("Bottle " & bot.id'Img & " put on line!");
-         
+               update.UpdateLogA("Bottle " & bot.id'Img & " put on line!");
                delay(1.0);
                exit when bot = null;
             end loop;
-      Put_Line("Empty bottle container!");
+      Error_Info.Set_Text("Empty bottle container!");
       
       
    end;
@@ -300,6 +294,7 @@ end UpdateGUI;
       procedure fillContainer is
       begin
          water_empty:=True;
+         Error_Info.Set_Text("Empty water container!");
          Put_Line("Filling machine is empty! Type 'a' to fill it or 'q' to abort the process!");
          loop 
             Ada.Text_IO.Get_Immediate(S);
@@ -320,16 +315,11 @@ end UpdateGUI;
          else
             inc:=0.75;
          end if;
-         
-         new_line;
-         Put_Line("Filling process....");
          while bot.filled <= 100 loop
             if(bot.filled mod 50=0) then
                --update.UpdateLogB(bot.filled'Img & "%  - " & fill'Img & " l");
                fill:=fill+inc;
-               new_line;
                water_filling:=water_filling-inc;
-               
                if(water_filling<=0.0) then                  
                   fillContainer;
                  end if;  
@@ -343,11 +333,12 @@ end UpdateGUI;
    begin
       accept Start;
       delay(5.25);
-      Put_Line("Machine_B: start");
       loop
+         while caps_empty or labels_empty loop
+            null;
+            end loop;
          Fifo_AB.Pop(bot);
          update.UpdateLabelB(bot.id'Img);
-         --update.Refresh;
          fillBottle;
          Fifo_BC.Push(bot);
          exit when bot = null;
@@ -356,8 +347,19 @@ end UpdateGUI;
    
    task body Machine_C is -- third machine - takes bottles from second line, capps them and puts them on third line
       bot: Bottle_access;
+      procedure fillContainer is
+      begin
+         caps_empty:=true;
+         Error_Info.Set_Text("Empty caps container!");
+         while caps_empty loop
+            null;
+         end loop;
+      end;
       procedure capBottle is
       begin
+         if caps_filling=0 then
+            fillContainer;
+         end if;
          caps_filling := caps_filling - 1; -- exception when negative value!
          bot.capped := True;
          delay(1.0);
@@ -366,14 +368,12 @@ end UpdateGUI;
    begin
       accept Start;
       delay(10.5);
-      Put_Line("Machine_C: start");
       loop
-         while water_empty loop
+         while water_empty or caps_empty or labels_empty loop
             null;
          end loop;
          Fifo_BC.Pop(bot);
          update.UpdateLabelC(bot.id'Img);
-         --update.Refresh;
          capBottle;
          Fifo_CD.Push(bot);
          exit when bot = null;
@@ -382,8 +382,18 @@ end UpdateGUI;
    
    task body Machine_D is -- forth machine - takse bottles from third line, label them and puts them in final package
       bot: Bottle_access;
+      procedure fillContainer is
+      begin
+         labels_empty:=true;
+         while labels_empty loop
+            null;
+         end loop;
+      end;
       procedure labelBottle is
       begin
+         if labels_filling=0 then
+            fillContainer;
+         end if; 
          labels_filling := labels_filling - 1; -- exception when negative value!
          bot.labeled := True;
          delay(1.0);
@@ -392,20 +402,16 @@ end UpdateGUI;
    begin
       accept Start  do
       delay(15.75);
-      Put_Line("Machine_D: start");
          loop
-         while water_empty loop
+         while water_empty or caps_empty or labels_empty loop
             null;
          end loop;
             Fifo_CD.Pop(bot);
             update.UpdateLabelD(bot.id'Img);
-            --update.Refresh;
             labelBottle;
             Fifo_end.Push(bot);
             ilosc_butelek := ilosc_butelek + 1;
             update.UpdateMainLabel(ilosc_butelek_s & ilosc_butelek'Img);
-            --update.Refresh;
-            Put_Line("Bottle " & bot.id'Img & " packed!");
          exit when bot = null;
       end loop;
       end Start;
@@ -421,7 +427,7 @@ end UpdateGUI;
          Fifo_init.Push(bot);
       end loop;
       water_filling := 50.0;
-      caps_filling := 15;
+      caps_filling := 5;
       labels_filling := 13;
    end;
  
@@ -447,20 +453,39 @@ end UpdateGUI;
       end Start;
    end;
    
-
+--     inp : Character;
+   
+--     task body Input is
+--     begin
+--     accept Start  do
+--        loop
+--           Get_Immediate(inp);
+--           if inp='1' then
+--              water_filling := water_filling + 5.0;
+--              water_empty:=false;
+--           elsif inp='2' then
+--              caps_filling := caps_filling + 10;
+--              Put_Line("xx");
+--              caps_empty:=false;
+--           elsif inp='3' then
+--              labels_filling := labels_filling + 10;
+--              Put_Line("xxx");
+--              labels_empty := false;
+--           end if;
+--        end loop;
+--        end Start;
+--     end;
    
    procedure run is -- starting the production line
    begin
-      --        Input.Start;
-      
       Preferences;
       init;
       Machine_A.Start;
       Machine_B.Start;
       Machine_C.Start;
       Machine_D.Start;
+--        Input.Start;  
       GUI.Start;
---          Input.Start;
    end run;
 
    
