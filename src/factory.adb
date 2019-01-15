@@ -120,11 +120,33 @@ package body Factory is
       procedure UpdateLogB(text : in String);
       procedure UpdateLogC(text : in String);
       procedure UpdateLogD(text : in String);
+      procedure Refresh;
    private 
         Sem : Boolean := True; 
    end UpdateGUI;
    
-  protected body UpdateGUI is 
+   protected body UpdateGUI is 
+      
+      procedure Refresh is
+         begin
+             Label_A.Set_Text(Label_A.Get_Text);
+             Label_B.Set_Text(Label_B.Get_Text);
+             Label_C.Set_Text(Label_C.Get_Text);
+             Label_D.Set_Text(Label_D.Get_Text);
+             Log_A3.Set_Text(Log_A3.Get_Text);
+             Log_A2.Set_Text(Log_A2.Get_Text);
+             Log_A1.Set_Text(Log_A1.Get_Text);
+             Log_B3.Set_Text(Log_B3.Get_Text);
+             Log_B2.Set_Text(Log_B2.Get_Text);
+             Log_B1.Set_Text(Log_B1.Get_Text);
+             Log_C3.Set_Text(Log_C3.Get_Text);
+             Log_C2.Set_Text(Log_C2.Get_Text);
+             Log_C1.Set_Text(Log_C1.Get_Text);
+             Log_D3.Set_Text(Log_D3.Get_Text);
+             Log_D2.Set_Text(Log_D2.Get_Text);
+             Log_D1.Set_Text(Log_D1.Get_Text);
+         
+         end Refresh;
       procedure UpdateLabelA(text : in String) is
          begin
          if  (Sem = True) then
@@ -246,10 +268,12 @@ end UpdateGUI;
             null;
             end loop;
                Fifo_init.Pop(bot);
-               update.UpdateLabelA(bot.id'Img);
+         update.UpdateLabelA(bot.id'Img);
+         update.Refresh;
                Fifo_AB.Push(bot);
                Put_Line("Bottle " & bot.id'Img & " put on line!");
-               update.UpdateLogA("Bottle " & bot.id'Img & " put on line!");
+         update.UpdateLogA("Bottle " & bot.id'Img & " put on line!");
+         
                delay(1.0);
                exit when bot = null;
             end loop;
@@ -313,6 +337,7 @@ end UpdateGUI;
       loop
          Fifo_AB.Pop(bot);
          update.UpdateLabelB(bot.id'Img);
+         update.Refresh;
          fillBottle;
          Fifo_BC.Push(bot);
          exit when bot = null;
@@ -338,6 +363,7 @@ end UpdateGUI;
          end loop;
          Fifo_BC.Pop(bot);
          update.UpdateLabelC(bot.id'Img);
+         update.Refresh;
          capBottle;
          Fifo_CD.Push(bot);
          exit when bot = null;
@@ -363,10 +389,12 @@ end UpdateGUI;
          end loop;
             Fifo_CD.Pop(bot);
             update.UpdateLabelD(bot.id'Img);
+            update.Refresh;
             labelBottle;
             Fifo_end.Push(bot);
             ilosc_butelek := ilosc_butelek + 1;
             update.UpdateMainLabel(ilosc_butelek_s & ilosc_butelek'Img);
+            update.Refresh;
             Put_Line("Bottle " & bot.id'Img & " packed!");
          exit when bot = null;
       end loop;
