@@ -128,12 +128,15 @@ package body Factory is
    
    protected body UpdateGUI is 
       
-      procedure CloseGUI is
-      begin
-          when 'Quit' =>
-      Close (My_Frame);
-      exit;
-      end CloseGUI;   
+    procedure My_Program is
+    begin
+      while Valid(My_Frame) loop
+         case Next_Command is
+            when Quit =>
+                 Close (My_Frame);
+
+      end loop;
+    end My_Program;  
       
       procedure Refresh is
          begin
@@ -452,7 +455,7 @@ end UpdateGUI;
    procedure run is -- starting the production line
    begin
       --        Input.Start;
-      
+      MyPro
       Preferences;
       init;
       Machine_A.Start;
