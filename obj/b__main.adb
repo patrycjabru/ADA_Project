@@ -260,7 +260,7 @@ package body ada_main is
            True, True, False, True, True, True, True, False, 
            False, True, False, False, False, True, True, True, 
            True, False, True, False),
-         Count => (0, 0, 0, 6, 4, 5, 6, 0, 4, 0),
+         Count => (0, 0, 0, 1, 4, 5, 6, 0, 4, 0),
          Unknown => (False, False, False, False, False, False, False, False, True, False));
       Priority_Specific_Dispatching :=
         Local_Priority_Specific_Dispatching'Address;
@@ -416,18 +416,18 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   D:\aSTUDIA\ADA_project\obj\fifo.o
-   --   D:\aSTUDIA\ADA_project\obj\jewl.o
-   --   D:\aSTUDIA\ADA_project\obj\jewl-win32_interface.o
-   --   D:\aSTUDIA\ADA_project\obj\jewl-canvas_implementation.o
-   --   D:\aSTUDIA\ADA_project\obj\jewl-message_handling.o
-   --   D:\aSTUDIA\ADA_project\obj\jewl-window_implementation.o
-   --   D:\aSTUDIA\ADA_project\obj\jewl-windows.o
-   --   D:\aSTUDIA\ADA_project\obj\factory.o
-   --   D:\aSTUDIA\ADA_project\obj\main.o
-   --   -LD:\aSTUDIA\ADA_project\obj\
-   --   -LD:\aSTUDIA\ADA_project\obj\
-   --   -LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+   --   C:\Users\maria\Documents\ADA_Project\obj\fifo.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\jewl.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\jewl-win32_interface.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\jewl-canvas_implementation.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\jewl-message_handling.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\jewl-window_implementation.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\jewl-windows.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\factory.o
+   --   C:\Users\maria\Documents\ADA_Project\obj\main.o
+   --   -LC:\Users\maria\Documents\ADA_Project\obj\
+   --   -LC:\Users\maria\Documents\ADA_Project\obj\
+   --   -LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
    --   -static
    --   -luser32
    --   -lgdi32

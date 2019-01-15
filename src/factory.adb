@@ -28,16 +28,19 @@ package body Factory is
    
    My_Frame : Frame_Type := Frame (660, 480, "Main Window", Quit);
    ilosc_butelek : nonNegative := 0;
-   ilosc_butelek_s : String := "Ilosc butelek";
-   Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Ilosc butelek", Centre);
-   Label_A: Label_Type := Label (My_Frame, (20,60), 0, 20, "label_A", Left);
-   Log_A1: Label_Type := Label (My_Frame, (20,100), 0, 20, "", Left);
-   Log_A2: Label_Type := Label (My_Frame, (20,140), 0, 20, "", Left);
-   Log_A3: Label_Type := Label (My_Frame, (20,180), 0, 20, "", Left);
+   ilosc_butelek_s : String := "Ilosc butelek: ";
+   Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Ilosc butelek: ", Centre);
+   --Type_label: Label_Type := Label (My_Frame, (0,50), 0, 20, "Rodzaj wody: ", Centre);
+
+   Label_A: Label_Type := Label (My_Frame, (20,110), 0, 20, "label_A", Left);
+   Log_A1: Label_Type := Label (My_Frame, (20,150), 0, 20, "", Left);
+   Log_A2: Label_Type := Label (My_Frame, (20,190), 0, 20, "", Left);
+   Log_A3: Label_Type := Label (My_Frame, (20,230), 0, 20, "", Left);
+   Log_A4: Label_Type := Label (My_Frame, (20,270), 0, 20, "", Left);
    
-   Label_B: Label_Type := Label (My_Frame, (200,60), 0, 20, "label_B", Left);
-   Label_C: Label_Type := Label (My_Frame, (350,60), 0, 20, "label_C", Left);
-   Label_D: Label_Type := Label (My_Frame, (512,60), 0, 20, "label_D", Left);	
+   Label_B: Label_Type := Label (My_Frame, (200,110), 0, 20, "label_B", Left);
+   Label_C: Label_Type := Label (My_Frame, (350,110), 0, 20, "label_C", Left);
+   Label_D: Label_Type := Label (My_Frame, (512,110), 0, 20, "label_D", Left);	
    
    
    type Bottle is
@@ -62,6 +65,7 @@ package body Factory is
          else
          typeofWater:=regular;
          end if;
+         -- Type_label.Set_Text("Rodzaj wody: "& typeofWater'Img);
       end;
       Ada.Text_IO.Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l:");
       declare
@@ -78,6 +82,7 @@ package body Factory is
             capacity:="1,5 l";  
             capacity_b:=1.5;
          end if;
+
       end;
    new_line;
    end Preferences;
@@ -91,13 +96,13 @@ package body Factory is
    Fifo_CD : Fifo_Type;
    Fifo_end : Fifo_Type;
    
-   protected type UpdateGUI is 
-      entry UpdateLabelA(text : in String);
-      entry UpdateLabelB(text : in String);
-      entry UpdateLabelC(text : in String);
-      entry UpdateLabelD(text : in String);
-      entry UpdateMainLabel(text : in String);
-      entry UpdateLogA(text : in String);
+    protected type UpdateGUI is 
+      procedure UpdateLabelA(text : in String);
+      procedure UpdateLabelB(text : in String);
+      procedure UpdateLabelC(text : in String);
+      procedure UpdateLabelD(text : in String);
+      procedure UpdateMainLabel(text : in String);
+      procedure UpdateLogA(text : in String);
 --        entry UpdateLogB(text : in String);
 --        entry UpdateLogC(text : in String);
 --        entry UpdateLogD(text : in String);
@@ -105,58 +110,63 @@ package body Factory is
         Sem : Boolean := True; 
    end UpdateGUI;
    
-   protected body UpdateGUI is 
-      entry UpdateLabelA(text : in String) 
-         when Sem is 
-      begin
-         Sem := False;
-         Label_A.Set_Text(text);
-         Sem := True;
+  protected body UpdateGUI is 
+      procedure UpdateLabelA(text : in String) is
+         begin
+         if  (Sem = True) then
+               Sem := False;
+               Label_A.Set_Text(text);
+               Sem := True;
+         end if;
       end UpdateLabelA;
       
-      entry UpdateLabelB(text : in String) 
-         when Sem is 
+   procedure UpdateLabelB(text : in String) is 
       begin
-         Sem := False;
-         Label_B.Set_Text(text);
-         Sem := True;
+         if (Sem = True) then 
+             Sem := False;
+             Label_B.Set_Text(text);
+             Sem := True;
+         end if;
       end UpdateLabelB;
       
-      entry UpdateLabelC(text : in String) 
-         when Sem is 
-      begin
-         Sem := False;
-         Label_C.Set_Text(text);
-         Sem := True;
-      end UpdateLabelC;
+   procedure UpdateLabelC(text : in String) is
+       begin
+         if  (Sem = True) then
+               Sem := False;
+               Label_C.Set_Text(text);
+               Sem := True;
+         end if;
+   end UpdateLabelC;
       
-      entry UpdateLabelD(text : in String) 
-         when Sem is 
-      begin
-         Sem := False;
-         Label_D.Set_Text(text);
-         Sem := True;
+   procedure UpdateLabelD(text : in String) is
+        begin
+         if  (Sem = True) then      
+               Sem := False;
+               Label_D.Set_Text(text);
+               Sem := True;
+         end if;
       end UpdateLabelD;
       
-      entry UpdateMainLabel(text : in String) 
-         when Sem is 
-      begin
-         Sem := False;
-         Main_label.Set_Text(text);
-         Sem := True;
-      end UpdateMainLabel;
+     procedure UpdateMainLabel(text : in String) is
+       begin
+         if  (Sem = True) then 
+               Sem := False;
+               Main_label.Set_Text(text);
+               Sem := True;
+         end if;
+     end UpdateMainLabel;
       
-      entry UpdateLogA(text : in String)
-        when Sem is
-      begin
-         Sem := False;
-         Log_A3.Set_Text(Log_A2.Get_Text);
-         Log_A2.Set_Text(Log_A1.Get_Text);
-         Log_A1.Set_Text(text);
-         Sem := True;
-      end UpdateLogA;
-      
-   end UpdateGUI;
+  procedure UpdateLogA(text : in String) is
+     begin
+        if  (Sem = True) then 
+               Sem := False;
+               Log_A3.Set_Text(Log_A2.Get_Text);
+               Log_A2.Set_Text(Log_A1.Get_Text);
+               Log_A1.Set_Text(text);
+               Sem := True;
+        end if;
+  end UpdateLogA;
+end UpdateGUI;
    
    update : UpdateGUI;
       
@@ -247,7 +257,7 @@ package body Factory is
       end;
    begin
       accept Start;
-      delay(5.0);
+      delay(5.25);
       Put_Line("Machine_B: start");
       loop
          Fifo_AB.Pop(bot);
@@ -271,7 +281,7 @@ package body Factory is
       end;
    begin
       accept Start;
-      delay(10.0);
+      delay(10.5);
       Put_Line("Machine_C: start");
       loop
          while water_empty loop
@@ -298,7 +308,7 @@ package body Factory is
       end;
    begin
       accept Start  do
-      delay(15.0);
+      delay(15.75);
       Put_Line("Machine_D: start");
          loop
          while water_empty loop

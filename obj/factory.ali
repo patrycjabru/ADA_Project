@@ -40,12 +40,11 @@ RV NO_IMPLICIT_ALIASING
 RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV SPARK_05
-RV MAX_PROTECTED_ENTRIES=6
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=5
 RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-U factory%b		factory.adb		e7d86b18 OO PF PK
+U factory%b		factory.adb		02f9dcd7 OO PF PK
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
@@ -88,7 +87,6 @@ Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
 Z system.tasking%s	s-taskin.adb		s-taskin.ali
 Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
-Z system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
 Z system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
 Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
 Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
@@ -126,23 +124,23 @@ D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-titest.ads		20180524051738 f6e9e057 ada.text_io.text_streams%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
-D factory.ads		20190115082214 90db13bf factory%s
-D factory.adb		20190115100010 47bf406e factory%b
-D fifo.ads		20190112123500 c7b08b59 fifo%s
-D fifo.adb		20181213174400 42862f34 fifo%b
+D factory.ads		20190115102232 90db13bf factory%s
+D factory.adb		20190115125228 a29ef7a1 factory%b
+D fifo.ads		20190115101152 c7b08b59 fifo%s
+D fifo.adb		20190115101152 42862f34 fifo%b
 D gnat.ads		20180524051738 fd2ad2f1 gnat%s
 D g-os_lib.ads		20180524051736 0db74523 gnat.os_lib%s
 D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-c.ads		20180524051736 5421119b interfaces.c%s
 D i-cstrin.ads		20180524051736 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
-D jewl.ads		20070108160000 e853f5a4 jewl%s
-D jewl-canvas_implementation.ads  20070108160000 95a129a8 jewl.canvas_implementation%s
-D jewl-message_handling.ads  20070108160000 3eba9c73 jewl.message_handling%s
-D jewl-win32_interface.ads  20070108160000 825052c2 jewl.win32_interface%s
-D jewl-window_implementation.ads  20070108160000 336a5273 jewl.window_implementation%s
-D jewl-windows.ads	20070108160000 4db40f6d jewl.windows%s
-D jewl-windows.adb	20070108160000 84e58d78 jewl.windows%b
+D jewl.ads		20190115102232 e853f5a4 jewl%s
+D jewl-canvas_implementation.ads  20190115102232 95a129a8 jewl.canvas_implementation%s
+D jewl-message_handling.ads  20190115102232 3eba9c73 jewl.message_handling%s
+D jewl-win32_interface.ads  20190115102232 825052c2 jewl.win32_interface%s
+D jewl-window_implementation.ads  20190115102232 336a5273 jewl.window_implementation%s
+D jewl-windows.ads	20190115102232 4db40f6d jewl.windows%s
+D jewl-windows.adb	20190115102232 84e58d78 jewl.windows%b
 D system.ads		20180524051738 32a08138 system%s
 D s-atacco.ads		20180524051738 4c36d12f system.address_to_access_conversions%s
 D s-atocou.ads		20180524051738 b45c2d8d system.atomic_counters%s
@@ -189,10 +187,10 @@ D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
 D s-win32.ads		20180524051736 b7f96285 system.win32%s
 X 1 ada.ads
-16K9*Ada 20e8 21|1r6 2r5 22|1r6 2r1 3r1 4r6 53r11 55r7 57r22 59r10 66r7 68r22
-. 70r10 208r13
+16K9*Ada 20e8 21|1r6 2r5 22|1r6 2r1 3r1 4r6 56r11 58r7 60r22 62r10 70r7 72r22
+. 74r10 218r13
 X 5 a-cdlili.ads
-51R9 List<10|43R9>
+51R9*List<10|43R9>
 X 11 a-ioexce.ads
 18K13*IO_Exceptions 30e22 22|4w10
 X 12 a-iteint.ads
@@ -203,125 +201,120 @@ X 14 a-stream.ads
 X 15 a-ststio.ads
 39K21*Stream_IO 223e26 22|2w13
 X 17 a-textio.ads
-49K13*Text_IO 471e16 21|1w10 2r9 22|1w10 3r5 53r15 55r11 57r26 59r14 66r11
-. 68r26 70r14 208r17
-166U14*New_Line 22|82s4 178s13 227s10 235s16
-223U14*Get_Immediate 22|208s25
-242U14*Put 22|55s19 66s19 177s13 231s16 232s16 233s16 268s10 269s10 295s10
-. 296s10
-256V13*Get_Line{string} 22|57s34 68s34
-263U14*Put_Line 22|59s22 70s22 168s13 171s16 173s16 176s13 179s13 188s16
-. 193s7 206s10 228s10 246s10 251s7 270s10 275s7 297s10 302s7 313s13
+49K13*Text_IO 471e16 21|1w10 2r9 22|1w10 3r5 56r15 58r11 60r26 62r14 70r11
+. 72r26 74r14 218r17
+166U14*New_Line 22|87s4 188s13 237s10 245s16
+223U14*Get_Immediate 22|218s25
+242U14*Put 22|58s19 70s19 187s13 241s16 242s16 243s16 278s10 279s10 305s10
+. 306s10
+256V13*Get_Line{string} 22|60s34 72s34
+263U14*Put_Line 22|62s22 74s22 178s13 181s16 183s16 186s13 189s13 198s16
+. 203s7 216s10 238s10 256s10 261s7 280s10 285s7 307s10 312s7 323s13
 X 18 a-titest.ads
 17K21*Text_Streams 23e29 22|3w13
 X 21 factory.ads
-4K9*Factory 32l5 32e12 22|10b14 393l5 393t12
-6t9*Machine_A 22|164b14 196t7 384r7
-7Y13 Start 22|167b20 384s17
-11t9*Machine_B 22|198b14 259t7 385r7
-12Y13 Start 22|249b14 385s17
-15t9*Machine_C 22|261b14 286t7 386r7
-16Y13 Start 22|273b14 386s17
-19t9*Machine_D 22|288b14 317t7 387r7
-20Y13 Start 22|300b14 316l11 316t16 387s17
-27t9*GUI 22|353b14 374t7 388r7
-28Y13 Start 22|371b14 373l11 373t16 388s11
-31U14*run 22|378b14 390l8 390t11
+4K9*Factory 32l5 32e12 22|10b14 403l5 403t12
+6t9*Machine_A 22|174b14 206t7 394r7
+7Y13 Start 22|177b20 394s17
+11t9*Machine_B 22|208b14 269t7 395r7
+12Y13 Start 22|259b14 395s17
+15t9*Machine_C 22|271b14 296t7 396r7
+16Y13 Start 22|283b14 396s17
+19t9*Machine_D 22|298b14 327t7 397r7
+20Y13 Start 22|310b14 326l11 326t16 397s17
+27t9*GUI 22|363b14 384t7 398r7
+28Y13 Start 22|381b14 383l11 383t16 398s11
+31U14*run 22|388b14 400l8 400t11
 X 22 factory.adb
 12I12 Percent{integer}
-13I12 nonNegative{integer} 21r18 22r20 30r20 45r15
+13I12 nonNegative{integer} 21r18 22r20 30r20 48r15
 14E9 waterType 14e42 15r16
-14n23 regular{14E9} 63r23
-14n32 sparkling{14E9} 61r23 170r28
-15e4 typeofWater{14E9} 61m10 63m10 170r16
-16a4 capacity{string} 72m13 75m13 78m13 177r17
+14n23 regular{14E9} 66r23
+14n32 sparkling{14E9} 64r23 180r28
+15e4 typeofWater{14E9} 64m10 66m10 180r16
+16a4 capacity{string} 76m13 79m13 82m13 187r17
 17E12 x{character}
-18f4 capacity_b{float} 73m13 76m13 79m13 219r14 221r17
-19b4 water_empty{boolean} 182r16 205m10 211m16 277r16 304r16
-20f4 water_filling{short_float} 179r45 210m16 236m16 236r31 238r19 343m7
-21i4 caps_filling{13I12} 265m10 265r26 344m7
-22i4 labels_filling{13I12} 292m10 292r28 345m7
+18f4 capacity_b{float} 77m13 80m13 83m13 229r14 231r17
+19b4 water_empty{boolean} 192r16 215m10 221m16 287r16 314r16
+20f4 water_filling{short_float} 189r45 220m16 246m16 246r31 248r19 353m7
+21i4 caps_filling{13I12} 275m10 275r26 354m7
+22i4 labels_filling{13I12} 302m10 302r28 355m7
 25E9 Command_Code 25e43 26r44
-25n26 Quit{25E9} 29r61 365r18
+25n26 Quit{25E9} 29r61 375r18
 25n32 Load{25E9}
 25n38 Save{25E9}
 26K12 My_Windows[36|97] 27r8
-29r4 My_Frame{36|358R8[26]} 32r37 33r34 34r33 35r33 36r33 38r34 39r34 40r34
-. 363r22
-30i4 ilosc_butelek{13I12} 311m13 311r30 312r54
-31a4 ilosc_butelek_s{string} 312r36 358r30
-32r4 Main_label{36|590R8[26]} 145r10 358r10
-33r4 Label_A{36|590R8[26]} 113r10 359r10
-34r4 Log_A1{36|590R8[26]} 154r26 155r10
-35r4 Log_A2{36|590R8[26]} 153r26 154r10
-36r4 Log_A3{36|590R8[26]} 153r10
-38r4 Label_B{36|590R8[26]} 121r10 360r10
-39r4 Label_C{36|590R8[26]} 129r10 361r10
-40r4 Label_D{36|590R8[26]} 137r10 362r10
-43R9 Bottle 49e17 50r33 339r21
-45i10*id{13I12} 186r40 188r41 189r50 246r34 254r34 269r18 281r34 296r18 308r37
-. 313r38 340m14
-46i10*filled{integer} 229r20 230r20 231r24 242m17 242r31
-47b10*capped{boolean} 266m14
-48b10*labeled{boolean} 293m14
-50P9 Bottle_access(43R9) 85r36 165r13 199r13 262r12 289r12 336r10
-52U14 Preferences 52b14 83l8 83t19 382s7
-57a7 S1{string} 59r32 60r13
-68a7 S2{string} 70r32 71r13 74r17
-85K12 Bottle_Fifo[23|4] 86r8
-88r4 Fifo_init{23|5R10[85]} 185m16 185r16 341m10 341r10
-89r4 Fifo_AB{23|5R10[85]} 187m16 187r16 253m10 253r10
-90r4 Fifo_BC{23|5R10[85]} 256m10 256r10 280m10 280r10
-91r4 Fifo_CD{23|5R10[85]} 283m10 283r10 307m13 307r13
-92r4 Fifo_end{23|5R10[85]} 310m13 310r13
-94W19 UpdateGUI 105E9 106l8 106e17 108b19 159l8 159t17 161r13
-95Y13 UpdateLabelA 95>26 109b13 115l11 115t23 186s23
-95a26 text{string} 113r27
-96Y13 UpdateLabelB 96>26 117b13 123l11 123t23 254s17
-96a26 text{string} 121r27
-97Y13 UpdateLabelC 97>26 125b13 131l11 131t23 281s17
-97a26 text{string} 129r27
-98Y13 UpdateLabelD 98>26 133b13 139l11 139t23 308s20
-98a26 text{string} 137r27
-99Y13 UpdateMainLabel 99>29 141b13 147l11 147t26 312s20
-99a29 text{string} 145r30
-100Y13 UpdateLogA 100>24 149b13 157l11 157t21 189s23
-100a24 text{string} 155r26
-105b9 Sem{boolean} 110r15 112r10 114r10 118r15 120r10 122r10 126r15 128r10
-. 130r10 134r15 136r10 138r10 142r15 144r10 146r10 150r14 152r10 156r10
-109a26 text{string}
-117a26 text{string}
-125a26 text{string}
-133a26 text{string}
-141a29 text{string}
-149a24 text{string}
-161w4 update{94W19} 186r16 189r16 254r10 281r10 308r13 312r13
-165p7 bot{50P9} 185m30 185r30 186r36 187r29 188r37 189r46 191r26
-199p7 bot{50P9} 229r16 230r16 231r20 242r13 242r27 246r30 253m22 253r22 254r30
-. 256r23 257r20
-200f7 fill{short_float} 232r20 234m16 234r22 245m10
-201f7 inc{short_float} 220m13 222m13 224m13 234r27 236r45
-202e7 S{character} 208m39 209r16
-203U17 fillContainer 203b17 215t10 239s19
-217U17 fillBottle 217b17 247t10 255s10
-262p7 bot{50P9} 266r10 269r14 280m22 280r22 281r30 283r23 284r20
-263U17 capBottle 263b17 271t10 282s10
-289p7 bot{50P9} 293r10 296r14 307m25 307r25 308r33 310r27 313r34 314r20
-290U17 labelBottle 290b17 298t10 309s13
-335U14 init 335b14 346t7 383s7
-336p4 bot{50P9} 339m10 340r10 341r25
-338i11 I{integer} 340r20
-355U17 my_program 355b17 369l11 369t21 372s10
+29r4 My_Frame{36|358R8[26]} 32r37 35r34 36r33 37r33 38r33 39r33 41r34 42r34
+. 43r34 373r22
+30i4 ilosc_butelek{13I12} 321m13 321r30 322r54
+31a4 ilosc_butelek_s{string} 322r36 368r30
+32r4 Main_label{36|590R8[26]} 154r16 368r10
+35r4 Label_A{36|590R8[26]} 118r16 369r10
+36r4 Log_A1{36|590R8[26]} 164r32 165r16
+37r4 Log_A2{36|590R8[26]} 163r32 164r16
+38r4 Log_A3{36|590R8[26]} 163r16
+39r4 Log_A4{36|590R8[26]}
+41r4 Label_B{36|590R8[26]} 127r14 370r10
+42r4 Label_C{36|590R8[26]} 136r16 371r10
+43r4 Label_D{36|590R8[26]} 145r16 372r10
+46R9 Bottle 52e17 53r33 349r21
+48i10*id{13I12} 196r40 198r41 199r50 256r34 264r34 279r18 291r34 306r18 318r37
+. 323r38 350m14
+49i10*filled{integer} 239r20 240r20 241r24 252m17 252r31
+50b10*capped{boolean} 276m14
+51b10*labeled{boolean} 303m14
+53P9 Bottle_access(46R9) 90r36 175r13 209r13 272r12 299r12 346r10
+55U14 Preferences 55b14 88l8 88t19 392s7
+60a7 S1{string} 62r32 63r13
+72a7 S2{string} 74r32 75r13 78r17
+90K12 Bottle_Fifo[23|4] 91r8
+93r4 Fifo_init{23|5R10[90]} 195m16 195r16 351m10 351r10
+94r4 Fifo_AB{23|5R10[90]} 197m16 197r16 263m10 263r10
+95r4 Fifo_BC{23|5R10[90]} 266m10 266r10 290m10 290r10
+96r4 Fifo_CD{23|5R10[90]} 293m10 293r10 317m13 317r13
+97r4 Fifo_end{23|5R10[90]} 320m13 320r13
+99W20 UpdateGUI 110E9 111l8 111e17 113b18 169l5 169t14 171r13
+100U17 UpdateLabelA 100>30 114b17 121l11 121t23 196s23
+100a30 text{string} 114b30 118r33
+101U17 UpdateLabelB 101>30 123b14 130l11 130t23 264s17
+101a30 text{string} 123b27 127r31
+102U17 UpdateLabelC 102>30 132b14 139l8 139t20 291s17
+102a30 text{string} 132b27 136r33
+103U17 UpdateLabelD 103>30 141b14 148l11 148t23 318s20
+103a30 text{string} 141b27 145r33
+104U17 UpdateMainLabel 104>33 150b16 157l10 157t25 322s20
+104a33 text{string} 150b32 154r36
+105U17 UpdateLogA 105>28 159b13 168l7 168t17 199s23
+105a28 text{string} 159b24 165r32
+110b9 Sem{boolean} 116r15 117r16 119r16 125r14 126r14 128r14 134r15 135r16
+. 137r16 143r15 144r16 146r16 152r15 153r16 155r16 161r14 162r16 166r16
+171w4 update{99W20} 196r16 199r16 264r10 291r10 318r13 322r13
+175p7 bot{53P9} 195m30 195r30 196r36 197r29 198r37 199r46 201r26
+209p7 bot{53P9} 239r16 240r16 241r20 252r13 252r27 256r30 263m22 263r22 264r30
+. 266r23 267r20
+210f7 fill{short_float} 242r20 244m16 244r22 255m10
+211f7 inc{short_float} 230m13 232m13 234m13 244r27 246r45
+212e7 S{character} 218m39 219r16
+213U17 fillContainer 213b17 225t10 249s19
+227U17 fillBottle 227b17 257t10 265s10
+272p7 bot{53P9} 276r10 279r14 290m22 290r22 291r30 293r23 294r20
+273U17 capBottle 273b17 281t10 292s10
+299p7 bot{53P9} 303r10 306r14 317m25 317r25 318r33 320r27 323r34 324r20
+300U17 labelBottle 300b17 308t10 319s13
+345U14 init 345b14 356t7 393s7
+346p4 bot{53P9} 349m10 350r10 351r25
+348i11 I{integer} 350r20
+365U17 my_program 365b17 379l11 379t21 382s10
 X 23 fifo.ads
-4k10*Fifo 21|1w19 22|85r31 23|13e10
-5R10*Fifo_Type<5|51R9[10[22|85]]> 22|88r16[85] 89r14[85] 90r14[85] 91r14[85]
-. 92r15[85]
-6U15*Push 22|187s24[85] 256s18[85] 283s18[85] 310s22[85] 341s20[85]
-7U15*Pop 22|185s26[85] 253s18[85] 280s18[85] 307s21[85]
+4k10*Fifo 21|1w19 22|90r31 23|13e10
+5R10*Fifo_Type<5|51R9[10[22|90]]> 22|93r16[90] 94r14[90] 95r14[90] 96r14[90]
+. 97r15[90]
+6U15*Push 22|197s24[90] 266s18[90] 293s18[90] 320s22[90] 351s20[90]
+7U15*Pop 22|195s26[90] 263s18[90] 290s18[90] 317s21[90]
 X 25 gnat.ads
-34K9*GNAT 22|6r6 365r26 25|37e9
+34K9*GNAT 22|6r6 375r26 25|37e9
 X 26 g-os_lib.ads
-51K14*OS_Lib=51:36 22|6w11 365r31
+51K14*OS_Lib=51:36 22|6w11 375r31
 X 31 jewl.ads
 97K9*JEWL 22|5r1 6r18 26r30 31|238e9
 X 32 jewl-canvas_implementation.ads
@@ -329,25 +322,25 @@ X 32 jewl-canvas_implementation.ads
 X 36 jewl-windows.ads
 97k14*Windows 22|5w6 6w23 26r35 36|1578e17
 135E11*Alignment_Type
-135n30*Left{135E11[22|26]} 22|33r71[26] 34r64[26] 35r64[26] 36r64[26] 38r72[26]
-. 39r72[26] 40r72[26]
-135n36*Centre{135E11[22|26]} 22|32r79[26]
+135n30*Left{135E11[22|26]} 22|35r72[26] 36r64[26] 37r64[26] 38r64[26] 39r64[26]
+. 41r73[26] 42r73[26] 43r73[26]
+135n36*Centre{135E11[22|26]} 22|32r81[26]
 262H8*Window_Type
 324H8*Container_Type<262R8[22|26]>
 325H8*Control_Type<262R8[22|26]>
 358R8*Frame_Type<324R8[22|26]> 22|29r15[26]
 404V13*Frame{358R8[22|26]} 22|29s29[26]
-411V13*Valid{boolean} 22|363s16[26]
-416V13*Next_Command{22|25E9} 22|364s18[26]
+411V13*Valid{boolean} 22|373s16[26]
+416V13*Next_Command{22|25E9} 22|374s18[26]
 543H8*Text_Control_Type<325R8[22|26]>
-568V13*Get_Text{string} 22|153s33[26] 154s33[26]
-572U13*Set_Text 22|113s18[26] 121s18[26] 129s18[26] 137s18[26] 145s21[26]
-. 153s17[26] 154s17[26] 155s17[26] 358s21[26] 359s18[26] 360s18[26] 361s18[26]
-. 362s18[26]
-590R8*Label_Type<543R8[22|26]> 22|32r16[26] 33r13[26] 34r12[26] 35r12[26]
-. 36r12[26] 38r13[26] 39r13[26] 40r13[26]
-646V12*Label{590R8[22|26]} 22|32s30[26] 33s27[26] 34s26[26] 35s26[26] 36s26[26]
-. 38s27[26] 39s27[26] 40s27[26]
+568V13*Get_Text{string} 22|163s39[26] 164s39[26]
+572U13*Set_Text 22|118s24[26] 127s22[26] 136s24[26] 145s24[26] 154s27[26]
+. 163s23[26] 164s23[26] 165s23[26] 368s21[26] 369s18[26] 370s18[26] 371s18[26]
+. 372s18[26]
+590R8*Label_Type<543R8[22|26]> 22|32r16[26] 35r13[26] 36r12[26] 37r12[26]
+. 38r12[26] 39r12[26] 41r13[26] 42r13[26] 43r13[26]
+646V12*Label{590R8[22|26]} 22|32s30[26] 35s27[26] 36s26[26] 37s26[26] 38s26[26]
+. 39s26[26] 41s27[26] 42s27[26] 43s27[26]
 X 38 system.ads
 67M9*Address
 X 51 s-memory.ads
@@ -355,7 +348,7 @@ X 51 s-memory.ads
 68U14*Free 104i<c,__gnat_free>22
 76V13*Realloc{38|67M9} 105i<c,__gnat_realloc>22
 X 54 s-os_lib.ads
-1045U14*OS_Exit 22|365s38
+1045U14*OS_Exit 22|375s38
 X 60 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
