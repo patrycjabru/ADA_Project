@@ -145,16 +145,13 @@ package body Factory is
              Log_D3.Set_Text(Log_D3.Get_Text);
              Log_D2.Set_Text(Log_D2.Get_Text);
              Log_D1.Set_Text(Log_D1.Get_Text);
-         
          end Refresh;
       procedure UpdateLabelA(text : in String) is
          begin
          if  (Sem = True) then
              Sem := False;
              Label_A.Set_Text(text);
-             Label_B.Set_Text(Label_B.Get_Text);
-             Label_C.Set_Text(Label_C.Get_Text);
-             Label_D.Set_Text(Label_D.Get_Text);
+             Refresh;
              Sem := True;
          end if;
       end UpdateLabelA;
@@ -164,8 +161,7 @@ package body Factory is
          if (Sem = True) then 
              Sem := False;
              Label_B.Set_Text(text);
-             Label_C.Set_Text(Label_C.Get_Text);
-             Label_D.Set_Text(Label_D.Get_Text);
+             Refresh;
              Sem := True;
          end if;
       end UpdateLabelB;
@@ -175,7 +171,7 @@ package body Factory is
          if  (Sem = True) then
             Sem := False;
             Label_C.Set_Text(text);
-            Label_D.Set_Text(Label_D.Get_Text);
+             Refresh;
             Sem := True;
          end if;
    end UpdateLabelC;
@@ -184,7 +180,8 @@ package body Factory is
         begin
          if  (Sem = True) then      
                Sem := False;
-               Label_D.Set_Text(text);
+            Label_D.Set_Text(text);
+             Refresh;
                Sem := True;
          end if;
       end UpdateLabelD;
@@ -193,7 +190,8 @@ package body Factory is
        begin
          if  (Sem = True) then 
                Sem := False;
-               Main_label.Set_Text(text);
+            Main_label.Set_Text(text);
+             Refresh;
                Sem := True;
          end if;
      end UpdateMainLabel;
@@ -204,7 +202,8 @@ package body Factory is
            Sem := False;
            Log_A3.Set_Text(Log_A2.Get_Text);
            Log_A2.Set_Text(Log_A1.Get_Text);
-           Log_A1.Set_Text(text);
+            Log_A1.Set_Text(text);
+             Refresh;
            Sem := True;
         end if;
       end UpdateLogA;
@@ -215,7 +214,8 @@ package body Factory is
            Sem := False;
            Log_B3.Set_Text(Log_B2.Get_Text);
            Log_B2.Set_Text(Log_B1.Get_Text);
-           Log_B1.Set_Text(text);
+            Log_B1.Set_Text(text);
+             Refresh;
            Sem := True;
         end if;
       end UpdateLogB;
@@ -226,7 +226,8 @@ package body Factory is
            Sem := False;
            Log_C3.Set_Text(Log_C2.Get_Text);
            Log_C2.Set_Text(Log_C1.Get_Text);
-           Log_C1.Set_Text(text);
+            Log_C1.Set_Text(text);
+             Refresh;
            Sem := True;
         end if;
       end UpdateLogC;
@@ -237,7 +238,8 @@ package body Factory is
            Sem := False;
            Log_D3.Set_Text(Log_D2.Get_Text);
            Log_D2.Set_Text(Log_D1.Get_Text);
-           Log_D1.Set_Text(text);
+            Log_D1.Set_Text(text);
+             Refresh;
            Sem := True;
         end if;
       end UpdateLogD;
@@ -269,7 +271,7 @@ end UpdateGUI;
             end loop;
                Fifo_init.Pop(bot);
          update.UpdateLabelA(bot.id'Img);
-         update.Refresh;
+         --update.Refresh;
                Fifo_AB.Push(bot);
                Put_Line("Bottle " & bot.id'Img & " put on line!");
          update.UpdateLogA("Bottle " & bot.id'Img & " put on line!");
@@ -337,7 +339,7 @@ end UpdateGUI;
       loop
          Fifo_AB.Pop(bot);
          update.UpdateLabelB(bot.id'Img);
-         update.Refresh;
+         --update.Refresh;
          fillBottle;
          Fifo_BC.Push(bot);
          exit when bot = null;
@@ -363,7 +365,7 @@ end UpdateGUI;
          end loop;
          Fifo_BC.Pop(bot);
          update.UpdateLabelC(bot.id'Img);
-         update.Refresh;
+         --update.Refresh;
          capBottle;
          Fifo_CD.Push(bot);
          exit when bot = null;
@@ -389,12 +391,12 @@ end UpdateGUI;
          end loop;
             Fifo_CD.Pop(bot);
             update.UpdateLabelD(bot.id'Img);
-            update.Refresh;
+            --update.Refresh;
             labelBottle;
             Fifo_end.Push(bot);
             ilosc_butelek := ilosc_butelek + 1;
             update.UpdateMainLabel(ilosc_butelek_s & ilosc_butelek'Img);
-            update.Refresh;
+            --update.Refresh;
             Put_Line("Bottle " & bot.id'Img & " packed!");
          exit when bot = null;
       end loop;

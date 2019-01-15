@@ -66,8 +66,8 @@ D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
 D a-tags.ads		20180524051738 491b781d ada.tags%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
-D jewl.ads		20190115143406 e853f5a4 jewl%s
-D jewl.adb		20190115143406 38f39ab0 jewl%b
+D jewl.ads		20070108160000 e853f5a4 jewl%s
+D jewl.adb		20070108160000 38f39ab0 jewl%b
 D system.ads		20180524051738 32a08138 system%s
 D s-exctab.ads		20180524051738 54135002 system.exception_table%s
 D s-finmas.ads		20180524051738 7811a767 system.finalization_masters%s

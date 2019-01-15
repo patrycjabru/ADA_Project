@@ -1,22 +1,22 @@
 [MAPPING FILE]
-C:\Users\maria\AppData\Local\Temp\GNAT-TEMP-000003.TMP
+C:\Users\Patrycja\AppData\Local\Temp\GNAT-TEMP-000003.TMP
 [TOOLCHAIN VERSION]
 ada
 GNAT 2018
 [MAIN BASE NAME]
 factory
 [COMPILER PATH]
-c:\gnat\2018\bin\gcc.exe
+d:\programy\gnat\2018\bin\gcc.exe
 [COMPILER LEADING SWITCHES]
 -c
 -x
 ada
 -gnatA
 [MAIN DEPENDENCY FILE]
-C:\Users\maria\Documents\ADA_Project\obj\factory.ali
+D:\aSTUDIA\ADA_project\obj\factory.ali
 [DEPENDENCY FILES]
 [BINDING OPTIONS]
 gnatbind_prefix=
 [PROJECT FILES]
-C:\Users\maria\Documents\ADA_Project\waterfactory.gpr
-20190115143406
+D:\aSTUDIA\ADA_project\waterfactory.gpr
+20190114160232
