@@ -1,0 +1,2 @@
+demo.adb:203:21: warning: index for "Number" may assume lower bound of 1
+demo.adb:203:21: warning: suggested replacement: "Number'First"

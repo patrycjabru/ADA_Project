@@ -1,44 +1,364 @@
 <?xml version="1.0"?>
 <Locations >
   <Project>
-    <vfs_file>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_file>
-    <file_marker column=" 37" line=" 1" >
+    <vfs_file />
+    <file_marker column=" 16" line=" 6" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\main.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 9" >
+    <file_marker column=" 1" line=" 24" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 17" >
+    <file_marker column=" 1" line=" 26" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 14" line=" 10" >
+    <file_marker column=" 12" line=" 19" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\fifo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 26" line=" 33" >
+    <file_marker column=" 4" line=" 8" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\fifo.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 28" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 17" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 48" line=" 43" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-windows.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1573" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-windows.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 204" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-window_implementation.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 304" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-window_implementation.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 536" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-canvas_implementation.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 369" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-canvas_implementation.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 91" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-win32_interface.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 965" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-win32_interface.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 929" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-message_handling.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 8" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\fifo.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 102" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-message_handling.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 104" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-message_handling.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 18" >
+    <file_marker column=" 4" line=" 392" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 12" line=" 228" >
+    <file_marker column=" 1" line=" 5" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 18" >
+    <file_marker column=" 3" line=" 108" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\jewl-message_handling.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\fifo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 24" line=" 219" >
+    <file_marker column=" 4" line=" 392" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 4" line=" 18" >
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 384" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 6" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 390" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 6" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 5" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 387" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 381" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 356" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 354" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 289" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 29" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 165" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 162" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 92" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 66" line=" 29" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 32" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 77" line=" 40" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 32" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 84" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 95" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 106" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 95" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 94" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 160" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 109" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 110" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 109" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 110" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 165" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 104" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 392" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 104" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 114" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 165" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 289" >
+      <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 11" line=" 123" >
       <vfs_project>D:\aSTUDIA\ADA_project\waterfactory.gpr</vfs_project>
       <vfs_file>D:\aSTUDIA\ADA_project\src\factory.adb</vfs_file>
     </file_marker>

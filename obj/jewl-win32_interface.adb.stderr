@@ -1,0 +1,9 @@
+jewl-win32_interface.adb:128:05: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:535:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:537:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:539:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:541:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:543:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:545:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:547:03: warning: types for unchecked conversion have different sizes
+jewl-win32_interface.ads:549:03: warning: types for unchecked conversion have different sizes

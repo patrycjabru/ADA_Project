@@ -23,30 +23,37 @@ package body ada_main is
    E080 : Short_Integer; pragma Import (Ada, E080, "system__object_reader_E");
    E047 : Short_Integer; pragma Import (Ada, E047, "system__dwarf_lines_E");
    E039 : Short_Integer; pragma Import (Ada, E039, "system__traceback__symbolic_E");
+   E160 : Short_Integer; pragma Import (Ada, E160, "ada__numerics_E");
    E103 : Short_Integer; pragma Import (Ada, E103, "ada__tags_E");
    E101 : Short_Integer; pragma Import (Ada, E101, "ada__streams_E");
-   E183 : Short_Integer; pragma Import (Ada, E183, "interfaces__c__strings_E");
+   E193 : Short_Integer; pragma Import (Ada, E193, "interfaces__c__strings_E");
    E115 : Short_Integer; pragma Import (Ada, E115, "system__file_control_block_E");
    E114 : Short_Integer; pragma Import (Ada, E114, "system__finalization_root_E");
    E112 : Short_Integer; pragma Import (Ada, E112, "ada__finalization_E");
    E111 : Short_Integer; pragma Import (Ada, E111, "system__file_io_E");
    E149 : Short_Integer; pragma Import (Ada, E149, "ada__streams__stream_io_E");
-   E167 : Short_Integer; pragma Import (Ada, E167, "system__storage_pools_E");
-   E163 : Short_Integer; pragma Import (Ada, E163, "system__finalization_masters_E");
+   E171 : Short_Integer; pragma Import (Ada, E171, "system__storage_pools_E");
+   E175 : Short_Integer; pragma Import (Ada, E175, "system__finalization_masters_E");
    E173 : Short_Integer; pragma Import (Ada, E173, "system__storage_pools__subpools_E");
-   E191 : Short_Integer; pragma Import (Ada, E191, "system__task_info_E");
+   E201 : Short_Integer; pragma Import (Ada, E201, "system__task_info_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "ada__calendar_E");
    E136 : Short_Integer; pragma Import (Ada, E136, "ada__calendar__delays_E");
-   E225 : Short_Integer; pragma Import (Ada, E225, "ada__real_time_E");
+   E243 : Short_Integer; pragma Import (Ada, E243, "ada__real_time_E");
    E099 : Short_Integer; pragma Import (Ada, E099, "ada__text_io_E");
    E153 : Short_Integer; pragma Import (Ada, E153, "ada__text_io__text_streams_E");
-   E169 : Short_Integer; pragma Import (Ada, E169, "system__pool_global_E");
-   E205 : Short_Integer; pragma Import (Ada, E205, "system__tasking__initialization_E");
-   E213 : Short_Integer; pragma Import (Ada, E213, "system__tasking__protected_objects_E");
-   E215 : Short_Integer; pragma Import (Ada, E215, "system__tasking__protected_objects__entries_E");
-   E219 : Short_Integer; pragma Import (Ada, E219, "system__tasking__queuing_E");
-   E223 : Short_Integer; pragma Import (Ada, E223, "system__tasking__stages_E");
+   E167 : Short_Integer; pragma Import (Ada, E167, "system__pool_global_E");
+   E227 : Short_Integer; pragma Import (Ada, E227, "system__tasking__initialization_E");
+   E185 : Short_Integer; pragma Import (Ada, E185, "system__tasking__protected_objects_E");
+   E223 : Short_Integer; pragma Import (Ada, E223, "system__tasking__protected_objects__entries_E");
+   E235 : Short_Integer; pragma Import (Ada, E235, "system__tasking__queuing_E");
+   E241 : Short_Integer; pragma Import (Ada, E241, "system__tasking__stages_E");
    E155 : Short_Integer; pragma Import (Ada, E155, "fifo_E");
+   E159 : Short_Integer; pragma Import (Ada, E159, "jewl_E");
+   E215 : Short_Integer; pragma Import (Ada, E215, "jewl__win32_interface_E");
+   E183 : Short_Integer; pragma Import (Ada, E183, "jewl__canvas_implementation_E");
+   E245 : Short_Integer; pragma Import (Ada, E245, "jewl__window_implementation_E");
+   E219 : Short_Integer; pragma Import (Ada, E219, "jewl__message_handling_E");
+   E247 : Short_Integer; pragma Import (Ada, E247, "jewl__windows_E");
    E134 : Short_Integer; pragma Import (Ada, E134, "factory_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -65,54 +72,82 @@ package body ada_main is
          E134 := E134 - 1;
          F1;
       end;
-      E215 := E215 - 1;
+      E245 := E245 - 1;
+      E219 := E219 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "system__tasking__protected_objects__entries__finalize_spec");
+         pragma Import (Ada, F2, "jewl__message_handling__finalize_spec");
       begin
          F2;
       end;
-      E169 := E169 - 1;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "system__pool_global__finalize_spec");
+         pragma Import (Ada, F3, "jewl__window_implementation__finalize_spec");
       begin
          F3;
       end;
-      E099 := E099 - 1;
+      E183 := E183 - 1;
       declare
          procedure F4;
-         pragma Import (Ada, F4, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F4, "jewl__canvas_implementation__finalize_spec");
       begin
          F4;
       end;
-      E173 := E173 - 1;
+      E159 := E159 - 1;
       declare
          procedure F5;
-         pragma Import (Ada, F5, "system__storage_pools__subpools__finalize_spec");
+         pragma Import (Ada, F5, "jewl__finalize_spec");
       begin
          F5;
       end;
-      E163 := E163 - 1;
+      E223 := E223 - 1;
       declare
          procedure F6;
-         pragma Import (Ada, F6, "system__finalization_masters__finalize_spec");
+         pragma Import (Ada, F6, "system__tasking__protected_objects__entries__finalize_spec");
       begin
          F6;
       end;
-      E149 := E149 - 1;
+      E167 := E167 - 1;
       declare
          procedure F7;
-         pragma Import (Ada, F7, "ada__streams__stream_io__finalize_spec");
+         pragma Import (Ada, F7, "system__pool_global__finalize_spec");
       begin
          F7;
       end;
+      E099 := E099 - 1;
       declare
          procedure F8;
-         pragma Import (Ada, F8, "system__file_io__finalize_body");
+         pragma Import (Ada, F8, "ada__text_io__finalize_spec");
+      begin
+         F8;
+      end;
+      E173 := E173 - 1;
+      declare
+         procedure F9;
+         pragma Import (Ada, F9, "system__storage_pools__subpools__finalize_spec");
+      begin
+         F9;
+      end;
+      E175 := E175 - 1;
+      declare
+         procedure F10;
+         pragma Import (Ada, F10, "system__finalization_masters__finalize_spec");
+      begin
+         F10;
+      end;
+      E149 := E149 - 1;
+      declare
+         procedure F11;
+         pragma Import (Ada, F11, "ada__streams__stream_io__finalize_spec");
+      begin
+         F11;
+      end;
+      declare
+         procedure F12;
+         pragma Import (Ada, F12, "system__file_io__finalize_body");
       begin
          E111 := E111 - 1;
-         F8;
+         F12;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -213,20 +248,20 @@ package body ada_main is
            False, False, False, False),
          Value => (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
          Violated =>
-          (False, False, False, False, True, True, False, False, 
+          (True, False, False, False, True, True, False, False, 
            False, False, False, True, True, True, True, False, 
-           False, False, False, False, True, True, False, True, 
-           True, False, True, True, True, True, False, False, 
-           False, False, False, True, False, False, True, False, 
-           True, False, False, True, False, True, False, True, 
-           False, False, False, True, False, True, False, False, 
-           False, False, False, True, False, True, True, True, 
+           False, False, True, False, True, True, False, True, 
+           True, False, True, True, True, True, False, True, 
+           False, False, False, True, False, True, True, False, 
+           True, True, True, True, False, True, False, True, 
+           True, False, False, True, False, True, False, False, 
+           False, False, False, True, True, True, True, True, 
            False, False, True, False, True, True, True, False, 
            True, True, False, True, True, True, True, False, 
-           False, True, False, False, False, False, False, True, 
-           True, False, False, False),
-         Count => (0, 0, 0, 0, 0, 1, 4, 0, 0, 0),
-         Unknown => (False, False, False, False, False, False, False, False, False, False));
+           False, True, False, False, False, True, True, True, 
+           True, False, True, False),
+         Count => (0, 0, 0, 6, 4, 5, 6, 0, 4, 0),
+         Unknown => (False, False, False, False, False, False, False, False, True, False));
       Priority_Specific_Dispatching :=
         Local_Priority_Specific_Dispatching'Address;
       Num_Specific_Dispatching := 0;
@@ -275,13 +310,15 @@ package body ada_main is
       System.Traceback.Symbolic'Elab_Body;
       E039 := E039 + 1;
       E080 := E080 + 1;
+      Ada.Numerics'Elab_Spec;
+      E160 := E160 + 1;
       Ada.Tags'Elab_Spec;
       Ada.Tags'Elab_Body;
       E103 := E103 + 1;
       Ada.Streams'Elab_Spec;
       E101 := E101 + 1;
       Interfaces.C.Strings'Elab_Spec;
-      E183 := E183 + 1;
+      E193 := E193 + 1;
       System.File_Control_Block'Elab_Spec;
       E115 := E115 + 1;
       System.Finalization_Root'Elab_Spec;
@@ -293,14 +330,14 @@ package body ada_main is
       Ada.Streams.Stream_Io'Elab_Spec;
       E149 := E149 + 1;
       System.Storage_Pools'Elab_Spec;
-      E167 := E167 + 1;
+      E171 := E171 + 1;
       System.Finalization_Masters'Elab_Spec;
       System.Finalization_Masters'Elab_Body;
-      E163 := E163 + 1;
+      E175 := E175 + 1;
       System.Storage_Pools.Subpools'Elab_Spec;
       E173 := E173 + 1;
       System.Task_Info'Elab_Spec;
-      E191 := E191 + 1;
+      E201 := E201 + 1;
       Ada.Calendar'Elab_Spec;
       Ada.Calendar'Elab_Body;
       E138 := E138 + 1;
@@ -308,25 +345,39 @@ package body ada_main is
       E136 := E136 + 1;
       Ada.Real_Time'Elab_Spec;
       Ada.Real_Time'Elab_Body;
-      E225 := E225 + 1;
+      E243 := E243 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E099 := E099 + 1;
       Ada.Text_Io.Text_Streams'Elab_Spec;
       E153 := E153 + 1;
       System.Pool_Global'Elab_Spec;
-      E169 := E169 + 1;
+      E167 := E167 + 1;
       System.Tasking.Initialization'Elab_Body;
-      E205 := E205 + 1;
+      E227 := E227 + 1;
       System.Tasking.Protected_Objects'Elab_Body;
-      E213 := E213 + 1;
+      E185 := E185 + 1;
       System.Tasking.Protected_Objects.Entries'Elab_Spec;
-      E215 := E215 + 1;
-      System.Tasking.Queuing'Elab_Body;
-      E219 := E219 + 1;
-      System.Tasking.Stages'Elab_Body;
       E223 := E223 + 1;
+      System.Tasking.Queuing'Elab_Body;
+      E235 := E235 + 1;
+      System.Tasking.Stages'Elab_Body;
+      E241 := E241 + 1;
       E155 := E155 + 1;
+      JEWL'ELAB_SPEC;
+      JEWL'ELAB_BODY;
+      E159 := E159 + 1;
+      E215 := E215 + 1;
+      JEWL.CANVAS_IMPLEMENTATION'ELAB_SPEC;
+      JEWL.CANVAS_IMPLEMENTATION'ELAB_BODY;
+      E183 := E183 + 1;
+      JEWL.WINDOW_IMPLEMENTATION'ELAB_SPEC;
+      JEWL.MESSAGE_HANDLING'ELAB_SPEC;
+      JEWL.MESSAGE_HANDLING'ELAB_BODY;
+      E219 := E219 + 1;
+      JEWL.WINDOW_IMPLEMENTATION'ELAB_BODY;
+      E245 := E245 + 1;
+      E247 := E247 + 1;
       Factory'Elab_Spec;
       Factory'Elab_Body;
       E134 := E134 + 1;
@@ -366,12 +417,22 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   D:\aSTUDIA\ADA_project\obj\fifo.o
+   --   D:\aSTUDIA\ADA_project\obj\jewl.o
+   --   D:\aSTUDIA\ADA_project\obj\jewl-win32_interface.o
+   --   D:\aSTUDIA\ADA_project\obj\jewl-canvas_implementation.o
+   --   D:\aSTUDIA\ADA_project\obj\jewl-message_handling.o
+   --   D:\aSTUDIA\ADA_project\obj\jewl-window_implementation.o
+   --   D:\aSTUDIA\ADA_project\obj\jewl-windows.o
    --   D:\aSTUDIA\ADA_project\obj\factory.o
    --   D:\aSTUDIA\ADA_project\obj\main.o
    --   -LD:\aSTUDIA\ADA_project\obj\
    --   -LD:\aSTUDIA\ADA_project\obj\
    --   -LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
    --   -static
+   --   -luser32
+   --   -lgdi32
+   --   -lcomdlg32
+   --   -lwinmm
    --   -lgnarl
    --   -lgnat
    --   -Xlinker

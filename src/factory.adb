@@ -1,8 +1,9 @@
 With Ada.Text_IO,
 Ada.Streams.Stream_IO,
 Ada.Text_IO.Text_Streams,
-     Ada.IO_Exceptions;
-With GNAT.OS_Lib;
+     Ada.IO_Exceptions,
+JEWL.Windows;
+With GNAT.OS_Lib,JEWL.Windows;
 
 
 
@@ -19,7 +20,25 @@ package body Factory is
    water_filling: Short_Float; -- amount of water in filling machine container
    caps_filling: nonNegative; -- amount of caps in capping machine container
    labels_filling: nonNegative; -- amount of labels in labeling machine container
-   inp : Character with Atomic;
+--     inp : Character with Atomic;
+   
+   type Command_Code is (Quit, Load, Save);
+   package My_Windows is new JEWL.Windows (Command_Code);
+   use My_Windows;
+   
+   My_Frame : Frame_Type := Frame (660, 480, "Main Window", Quit);
+   ilosc_butelek : nonNegative := 0;
+   ilosc_butelek_s : String := "Ilosc butelek";
+   Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Ilosc butelek", Centre);
+   Label_A: Label_Type := Label (My_Frame, (20,60), 0, 20, "label_A", Left);
+   Log_A1: Label_Type := Label (My_Frame, (20,100), 0, 20, "", Left);
+   Log_A2: Label_Type := Label (My_Frame, (20,140), 0, 20, "", Left);
+   Log_A3: Label_Type := Label (My_Frame, (20,180), 0, 20, "", Left);
+   
+   Label_B: Label_Type := Label (My_Frame, (200,60), 0, 20, "label_B", Left);
+   Label_C: Label_Type := Label (My_Frame, (350,60), 0, 20, "label_C", Left);
+   Label_D: Label_Type := Label (My_Frame, (512,60), 0, 20, "label_D", Left);	
+   
    
    type Bottle is
       record
@@ -72,6 +91,75 @@ package body Factory is
    Fifo_CD : Fifo_Type;
    Fifo_end : Fifo_Type;
    
+   protected type UpdateGUI is 
+      entry UpdateLabelA(text : in String);
+      entry UpdateLabelB(text : in String);
+      entry UpdateLabelC(text : in String);
+      entry UpdateLabelD(text : in String);
+      entry UpdateMainLabel(text : in String);
+      entry UpdateLogA(text : in String);
+--        entry UpdateLogB(text : in String);
+--        entry UpdateLogC(text : in String);
+--        entry UpdateLogD(text : in String);
+   private 
+        Sem : Boolean := True; 
+   end UpdateGUI;
+   
+   protected body UpdateGUI is 
+      entry UpdateLabelA(text : in String) 
+         when Sem is 
+      begin
+         Sem := False;
+         Label_A.Set_Text(text);
+         Sem := True;
+      end UpdateLabelA;
+      
+      entry UpdateLabelB(text : in String) 
+         when Sem is 
+      begin
+         Sem := False;
+         Label_B.Set_Text(text);
+         Sem := True;
+      end UpdateLabelB;
+      
+      entry UpdateLabelC(text : in String) 
+         when Sem is 
+      begin
+         Sem := False;
+         Label_C.Set_Text(text);
+         Sem := True;
+      end UpdateLabelC;
+      
+      entry UpdateLabelD(text : in String) 
+         when Sem is 
+      begin
+         Sem := False;
+         Label_D.Set_Text(text);
+         Sem := True;
+      end UpdateLabelD;
+      
+      entry UpdateMainLabel(text : in String) 
+         when Sem is 
+      begin
+         Sem := False;
+         Main_label.Set_Text(text);
+         Sem := True;
+      end UpdateMainLabel;
+      
+      entry UpdateLogA(text : in String)
+        when Sem is
+      begin
+         Sem := False;
+         Log_A3.Set_Text(Log_A2.Get_Text);
+         Log_A2.Set_Text(Log_A1.Get_Text);
+         Log_A1.Set_Text(text);
+         Sem := True;
+      end UpdateLogA;
+      
+   end UpdateGUI;
+   
+   update : UpdateGUI;
+      
    
    task body Machine_A is -- first machine - takes bottles from bottle container and puts them on first line 
       bot : Bottle_access;
@@ -95,10 +183,10 @@ package body Factory is
             null;
             end loop;
                Fifo_init.Pop(bot);
+               update.UpdateLabelA(bot.id'Img);
                Fifo_AB.Push(bot);
-               Put("Bottle ");
-               Put(bot.id'Img);
-               Put_Line(" put on line!");
+               Put_Line("Bottle " & bot.id'Img & " put on line!");
+               update.UpdateLogA("Bottle " & bot.id'Img & " put on line!");
                delay(1.0);
                exit when bot = null;
             end loop;
@@ -159,9 +247,11 @@ package body Factory is
       end;
    begin
       accept Start;
+      delay(5.0);
       Put_Line("Machine_B: start");
       loop
          Fifo_AB.Pop(bot);
+         update.UpdateLabelB(bot.id'Img);
          fillBottle;
          Fifo_BC.Push(bot);
          exit when bot = null;
@@ -181,12 +271,14 @@ package body Factory is
       end;
    begin
       accept Start;
+      delay(10.0);
       Put_Line("Machine_C: start");
       loop
          while water_empty loop
             null;
          end loop;
          Fifo_BC.Pop(bot);
+         update.UpdateLabelC(bot.id'Img);
          capBottle;
          Fifo_CD.Push(bot);
          exit when bot = null;
@@ -206,15 +298,19 @@ package body Factory is
       end;
    begin
       accept Start  do
+      delay(15.0);
       Put_Line("Machine_D: start");
          loop
          while water_empty loop
             null;
          end loop;
-         Fifo_CD.Pop(bot);
-         labelBottle;
-         Fifo_end.Push(bot);
-         Put_Line("Bottle " & bot.id'Img & " packed!");
+            Fifo_CD.Pop(bot);
+            update.UpdateLabelD(bot.id'Img);
+            labelBottle;
+            Fifo_end.Push(bot);
+            ilosc_butelek := ilosc_butelek + 1;
+            update.UpdateMainLabel(ilosc_butelek_s & ilosc_butelek'Img);
+            Put_Line("Bottle " & bot.id'Img & " packed!");
          exit when bot = null;
       end loop;
       end Start;
@@ -249,19 +345,49 @@ package body Factory is
       labels_filling := 13;
    end;
    
+   
+   
+   
+ 
+   
+   task body GUI is
+
+      procedure my_program is
+      
+      begin
+         Main_label.Set_Text(ilosc_butelek_s);
+         Label_A.Set_Text("Label_A");
+         Label_B.Set_Text("Label_B");
+         Label_C.Set_Text("Label_C");
+         Label_D.Set_Text("Label_D");
+         while Valid(My_Frame) loop
+            case Next_Command is
+            when Quit => GNAT.OS_Lib.OS_Exit(0);
+            when others => null;
+            end case;
+         end loop;
+      end my_program;
+      begin
+      accept Start  do
+         my_program;
+      end Start;
+   end;
+   
+
+   
    procedure run is -- starting the production line
    begin
---        Input.Start;
+      --        Input.Start;
+      
       Preferences;
       init;
       Machine_A.Start;
-      delay(5.0);
-        Machine_B.Start;
-        delay(5.0);
-        Machine_C.Start;
-        delay(5.0);
-        Machine_D.Start;
+      Machine_B.Start;
+      Machine_C.Start;
+      Machine_D.Start;
+      GUI.Start;
 --          Input.Start;
-   end;
+   end run;
 
+   
 end Factory;

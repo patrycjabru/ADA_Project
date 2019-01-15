@@ -24,5 +24,9 @@ package Factory is
 --        entry Start;
 --     end Input;
 
+   task GUI is
+      entry Start;
+   end GUI;
+   
    procedure run;
 end Factory;

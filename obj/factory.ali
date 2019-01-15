@@ -11,6 +11,7 @@ RV NO_DELAY
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_DISPATCH
 RV NO_DISPATCHING_CALLS
+RV NO_ENTRY_CALLS_IN_ELABORATION_CODE
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
@@ -18,8 +19,12 @@ RV NO_FIXED_POINT
 RV NO_FLOATING_POINT
 RV NO_IO
 RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_HEAP_ALLOCATIONS
 RV NO_LOCAL_ALLOCATORS
+RV NO_LOCAL_PROTECTED_OBJECTS
 RV NO_NESTED_FINALIZATION
+RV NO_PROTECTED_TYPE_ALLOCATORS
+RV NO_PROTECTED_TYPES
 RV NO_RECURSION
 RV NO_RELATIVE_DELAY
 RV NO_SECONDARY_STACK
@@ -32,12 +37,15 @@ RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_ATTRIBUTES
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_ALIASING
+RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV SPARK_05
+RV MAX_PROTECTED_ENTRIES=6
 RV MAX_TASK_ENTRIES=1
-RV MAX_TASKS=4
+RV MAX_TASKS=5
+RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-U factory%b		factory.adb		9821ab45 OO PF PK
+U factory%b		factory.adb		e7d86b18 OO PF PK
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
@@ -56,6 +64,13 @@ Z ada.unchecked_deallocation%s
 Z fifo%s		fifo.adb		fifo.ali  ED
 W gnat%s		gnat.ads		gnat.ali
 W gnat.os_lib%s		g-os_lib.ads		g-os_lib.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W jewl%s		jewl.adb		jewl.ali  AD
+Z jewl.canvas_implementation%s  jewl-canvas_implementation.adb  jewl-canvas_implementation.ali
+Z jewl.message_handling%s  jewl-message_handling.adb  jewl-message_handling.ali  AD
+Z jewl.win32_interface%s  jewl-win32_interface.adb  jewl-win32_interface.ali  AD
+Z jewl.window_implementation%s  jewl-window_implementation.adb  jewl-window_implementation.ali
+W jewl.windows%s	jewl-windows.adb	jewl-windows.ali  ED
 Z system%s		system.ads		system.ali
 Z system.concat_2%s	s-conca2.adb		s-conca2.ali
 Z system.concat_3%s	s-conca3.adb		s-conca3.ali
@@ -72,10 +87,13 @@ Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
 Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
 Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
+Z system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
+Z system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
 Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
 Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
 
-U factory%s		factory.ads		4918db05 EE OO PK
+U factory%s		factory.ads		df762bbc EE OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
@@ -108,8 +126,8 @@ D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-titest.ads		20180524051738 f6e9e057 ada.text_io.text_streams%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20180524051736 eff36322 ada.unchecked_deallocation%s
-D factory.ads		20190112125444 06b5e306 factory%s
-D factory.adb		20190112125434 ae28708a factory%b
+D factory.ads		20190115082214 90db13bf factory%s
+D factory.adb		20190115100010 47bf406e factory%b
 D fifo.ads		20190112123500 c7b08b59 fifo%s
 D fifo.adb		20181213174400 42862f34 fifo%b
 D gnat.ads		20180524051738 fd2ad2f1 gnat%s
@@ -118,6 +136,13 @@ D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-c.ads		20180524051736 5421119b interfaces.c%s
 D i-cstrin.ads		20180524051736 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D jewl.ads		20070108160000 e853f5a4 jewl%s
+D jewl-canvas_implementation.ads  20070108160000 95a129a8 jewl.canvas_implementation%s
+D jewl-message_handling.ads  20070108160000 3eba9c73 jewl.message_handling%s
+D jewl-win32_interface.ads  20070108160000 825052c2 jewl.win32_interface%s
+D jewl-window_implementation.ads  20070108160000 336a5273 jewl.window_implementation%s
+D jewl-windows.ads	20070108160000 4db40f6d jewl.windows%s
+D jewl-windows.adb	20070108160000 84e58d78 jewl.windows%b
 D system.ads		20180524051738 32a08138 system%s
 D s-atacco.ads		20180524051738 4c36d12f system.address_to_access_conversions%s
 D s-atocou.ads		20180524051738 b45c2d8d system.atomic_counters%s
@@ -149,12 +174,14 @@ D s-stopoo.ads		20180524051736 b16154c2 system.storage_pools%s
 D s-stposu.ads		20180524051736 97a6219c system.storage_pools.subpools%s
 D s-stratt.ads		20180524051736 aedef97e system.stream_attributes%s
 D s-string.ads		20180524051738 8fe54fb7 system.strings%s
+D s-ststop.ads		20180524051736 5fbf1b38 system.strings.stream_ops%s
 D s-tasinf.ads		20180524051738 601f6b72 system.task_info%s
 D s-taspri.ads		20180524051738 6c1d93d4 system.task_primitives%s
 D s-taprop.ads		20180524051738 1dd2e1b6 system.task_primitives.operations%s
 D s-taskin.ads		20180524051738 1d8c1ccb system.tasking%s
 D s-taprob.ads		20180524051738 acd6094d system.tasking.protected_objects%s
 D s-tpoben.ads		20180524051738 60ad3dae system.tasking.protected_objects.entries%s
+D s-tpobop.ads		20180524051738 5f548bb3 system.tasking.protected_objects.operations%s
 D s-tasren.ads		20180524051738 a67a9949 system.tasking.rendezvous%s
 D s-tassta.ads		20180524051738 cca55c94 system.tasking.stages%s
 D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
@@ -162,10 +189,10 @@ D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
 D s-win32.ads		20180524051736 b7f96285 system.win32%s
 X 1 ada.ads
-16K9*Ada 20e8 21|1r6 2r5 22|1r6 2r1 3r1 4r6 34r11 36r7 38r22 40r10 47r7 49r22
-. 51r10 120r13
+16K9*Ada 20e8 21|1r6 2r5 22|1r6 2r1 3r1 4r6 53r11 55r7 57r22 59r10 66r7 68r22
+. 70r10 208r13
 X 5 a-cdlili.ads
-51R9*List<10|43R9>
+51R9 List<10|43R9>
 X 11 a-ioexce.ads
 18K13*IO_Exceptions 30e22 22|4w10
 X 12 a-iteint.ads
@@ -176,92 +203,162 @@ X 14 a-stream.ads
 X 15 a-ststio.ads
 39K21*Stream_IO 223e26 22|2w13
 X 17 a-textio.ads
-49K13*Text_IO 471e16 21|1w10 2r9 22|1w10 3r5 34r15 36r11 38r26 40r14 47r11
-. 49r26 51r14 120r17
-166U14*New_Line 22|63s4 90s13 139s10 147s16
-223U14*Get_Immediate 22|120s25
-242U14*Put 22|36s19 47s19 89s13 99s16 100s16 143s16 144s16 145s16 178s10
-. 179s10 203s10 204s10
-256V13*Get_Line{string} 22|38s34 49s34
-263U14*Put_Line 22|40s22 51s22 80s13 83s16 85s16 88s13 91s13 101s16 105s7
-. 118s10 140s10 158s10 162s7 180s10 184s7 205s10 209s7 217s10
+49K13*Text_IO 471e16 21|1w10 2r9 22|1w10 3r5 53r15 55r11 57r26 59r14 66r11
+. 68r26 70r14 208r17
+166U14*New_Line 22|82s4 178s13 227s10 235s16
+223U14*Get_Immediate 22|208s25
+242U14*Put 22|55s19 66s19 177s13 231s16 232s16 233s16 268s10 269s10 295s10
+. 296s10
+256V13*Get_Line{string} 22|57s34 68s34
+263U14*Put_Line 22|59s22 70s22 168s13 171s16 173s16 176s13 179s13 188s16
+. 193s7 206s10 228s10 246s10 251s7 270s10 275s7 297s10 302s7 313s13
 X 18 a-titest.ads
 17K21*Text_Streams 23e29 22|3w13
 X 21 factory.ads
-4K9*Factory 28l5 28e12 22|9b14 267l5 267t12
-6t9*Machine_A 22|76b14 108t7 257r7
-7Y13 Start 22|79b20 257s17
-11t9*Machine_B 22|110b14 169t7 259r9
-12Y13 Start 22|161b14 259s19
-15t9*Machine_C 22|171b14 194t7 261r9
-16Y13 Start 22|183b14 261s19
-19t9*Machine_D 22|196b14 221t7 263r9
-20Y13 Start 22|208b14 220l11 220t16 263s19
-27U14*run 22|252b14 265t7
+4K9*Factory 32l5 32e12 22|10b14 393l5 393t12
+6t9*Machine_A 22|164b14 196t7 384r7
+7Y13 Start 22|167b20 384s17
+11t9*Machine_B 22|198b14 259t7 385r7
+12Y13 Start 22|249b14 385s17
+15t9*Machine_C 22|261b14 286t7 386r7
+16Y13 Start 22|273b14 386s17
+19t9*Machine_D 22|288b14 317t7 387r7
+20Y13 Start 22|300b14 316l11 316t16 387s17
+27t9*GUI 22|353b14 374t7 388r7
+28Y13 Start 22|371b14 373l11 373t16 388s11
+31U14*run 22|378b14 390l8 390t11
 X 22 factory.adb
-11I12 Percent{integer}
-12I12 nonNegative{integer} 20r18 21r20 26r15
-13E9 waterType 13e42 14r16
-13n23 regular{13E9} 44r23
-13n32 sparkling{13E9} 42r23 82r28
-14e4 typeofWater{13E9} 42m10 44m10 82r16
-15a4 capacity{string} 53m13 56m13 59m13 89r17
-16E12 x{character}
-17f4 capacity_b{float} 54m13 57m13 60m13 131r14 133r17
-18b4 water_empty{boolean} 94r16 117m10 123m16 186r16 211r16
-19f4 water_filling{short_float} 91r45 122m16 148m16 148r31 150r19 247m7
-20i4 caps_filling{12I12} 175m10 175r26 248m7
-21i4 labels_filling{12I12} 200m10 200r28 249m7
-22e4 inp{character}
-24R9 Bottle 30e17 31r33 243r21
-26i10*id{12I12} 100r24 158r34 179r18 204r18 217r35 244m14
-27i10*filled{integer} 141r20 142r20 143r24 154m17 154r31
-28b10*capped{boolean} 176m14
-29b10*labeled{boolean} 201m14
-31P9 Bottle_access(24R9) 66r36 77r13 111r13 172r12 197r12 240r10
-33U14 Preferences 33b14 64l8 64t19 255s7
-38a7 S1{string} 40r32 41r13
-49a7 S2{string} 51r32 52r13 55r17
-66K12 Bottle_Fifo[23|4] 67r8
-69r4 Fifo_init{23|5R10[66]} 97m16 97r16 245m10 245r10
-70r4 Fifo_AB{23|5R10[66]} 98m16 98r16 164m10 164r10
-71r4 Fifo_BC{23|5R10[66]} 166m10 166r10 189m10 189r10
-72r4 Fifo_CD{23|5R10[66]} 191m10 191r10 214m10 214r10
-73r4 Fifo_end{23|5R10[66]} 216m10 216r10
-77p7 bot{31P9} 97m30 97r30 98r29 100r20 103r26
-111p7 bot{31P9} 141r16 142r16 143r20 154r13 154r27 158r30 164m22 164r22 166r23
-. 167r20
-112f7 fill{short_float} 144r20 146m16 146r22 157m10
-113f7 inc{short_float} 132m13 134m13 136m13 146r27 148r45
-114e7 S{character} 120m39 121r16
-115U17 fillContainer 115b17 127t10 151s19
-129U17 fillBottle 129b17 159t10 165s10
-172p7 bot{31P9} 176r10 179r14 189m22 189r22 191r23 192r20
-173U17 capBottle 173b17 181t10 190s10
-197p7 bot{31P9} 201r10 204r14 214m22 214r22 216r24 217r31 218r20
-198U17 labelBottle 198b17 206t10 215s10
-239U14 init 239b14 250t7 256s7
-240p4 bot{31P9} 243m10 244r10 245r25
-242i11 I{integer} 244r20
+12I12 Percent{integer}
+13I12 nonNegative{integer} 21r18 22r20 30r20 45r15
+14E9 waterType 14e42 15r16
+14n23 regular{14E9} 63r23
+14n32 sparkling{14E9} 61r23 170r28
+15e4 typeofWater{14E9} 61m10 63m10 170r16
+16a4 capacity{string} 72m13 75m13 78m13 177r17
+17E12 x{character}
+18f4 capacity_b{float} 73m13 76m13 79m13 219r14 221r17
+19b4 water_empty{boolean} 182r16 205m10 211m16 277r16 304r16
+20f4 water_filling{short_float} 179r45 210m16 236m16 236r31 238r19 343m7
+21i4 caps_filling{13I12} 265m10 265r26 344m7
+22i4 labels_filling{13I12} 292m10 292r28 345m7
+25E9 Command_Code 25e43 26r44
+25n26 Quit{25E9} 29r61 365r18
+25n32 Load{25E9}
+25n38 Save{25E9}
+26K12 My_Windows[36|97] 27r8
+29r4 My_Frame{36|358R8[26]} 32r37 33r34 34r33 35r33 36r33 38r34 39r34 40r34
+. 363r22
+30i4 ilosc_butelek{13I12} 311m13 311r30 312r54
+31a4 ilosc_butelek_s{string} 312r36 358r30
+32r4 Main_label{36|590R8[26]} 145r10 358r10
+33r4 Label_A{36|590R8[26]} 113r10 359r10
+34r4 Log_A1{36|590R8[26]} 154r26 155r10
+35r4 Log_A2{36|590R8[26]} 153r26 154r10
+36r4 Log_A3{36|590R8[26]} 153r10
+38r4 Label_B{36|590R8[26]} 121r10 360r10
+39r4 Label_C{36|590R8[26]} 129r10 361r10
+40r4 Label_D{36|590R8[26]} 137r10 362r10
+43R9 Bottle 49e17 50r33 339r21
+45i10*id{13I12} 186r40 188r41 189r50 246r34 254r34 269r18 281r34 296r18 308r37
+. 313r38 340m14
+46i10*filled{integer} 229r20 230r20 231r24 242m17 242r31
+47b10*capped{boolean} 266m14
+48b10*labeled{boolean} 293m14
+50P9 Bottle_access(43R9) 85r36 165r13 199r13 262r12 289r12 336r10
+52U14 Preferences 52b14 83l8 83t19 382s7
+57a7 S1{string} 59r32 60r13
+68a7 S2{string} 70r32 71r13 74r17
+85K12 Bottle_Fifo[23|4] 86r8
+88r4 Fifo_init{23|5R10[85]} 185m16 185r16 341m10 341r10
+89r4 Fifo_AB{23|5R10[85]} 187m16 187r16 253m10 253r10
+90r4 Fifo_BC{23|5R10[85]} 256m10 256r10 280m10 280r10
+91r4 Fifo_CD{23|5R10[85]} 283m10 283r10 307m13 307r13
+92r4 Fifo_end{23|5R10[85]} 310m13 310r13
+94W19 UpdateGUI 105E9 106l8 106e17 108b19 159l8 159t17 161r13
+95Y13 UpdateLabelA 95>26 109b13 115l11 115t23 186s23
+95a26 text{string} 113r27
+96Y13 UpdateLabelB 96>26 117b13 123l11 123t23 254s17
+96a26 text{string} 121r27
+97Y13 UpdateLabelC 97>26 125b13 131l11 131t23 281s17
+97a26 text{string} 129r27
+98Y13 UpdateLabelD 98>26 133b13 139l11 139t23 308s20
+98a26 text{string} 137r27
+99Y13 UpdateMainLabel 99>29 141b13 147l11 147t26 312s20
+99a29 text{string} 145r30
+100Y13 UpdateLogA 100>24 149b13 157l11 157t21 189s23
+100a24 text{string} 155r26
+105b9 Sem{boolean} 110r15 112r10 114r10 118r15 120r10 122r10 126r15 128r10
+. 130r10 134r15 136r10 138r10 142r15 144r10 146r10 150r14 152r10 156r10
+109a26 text{string}
+117a26 text{string}
+125a26 text{string}
+133a26 text{string}
+141a29 text{string}
+149a24 text{string}
+161w4 update{94W19} 186r16 189r16 254r10 281r10 308r13 312r13
+165p7 bot{50P9} 185m30 185r30 186r36 187r29 188r37 189r46 191r26
+199p7 bot{50P9} 229r16 230r16 231r20 242r13 242r27 246r30 253m22 253r22 254r30
+. 256r23 257r20
+200f7 fill{short_float} 232r20 234m16 234r22 245m10
+201f7 inc{short_float} 220m13 222m13 224m13 234r27 236r45
+202e7 S{character} 208m39 209r16
+203U17 fillContainer 203b17 215t10 239s19
+217U17 fillBottle 217b17 247t10 255s10
+262p7 bot{50P9} 266r10 269r14 280m22 280r22 281r30 283r23 284r20
+263U17 capBottle 263b17 271t10 282s10
+289p7 bot{50P9} 293r10 296r14 307m25 307r25 308r33 310r27 313r34 314r20
+290U17 labelBottle 290b17 298t10 309s13
+335U14 init 335b14 346t7 383s7
+336p4 bot{50P9} 339m10 340r10 341r25
+338i11 I{integer} 340r20
+355U17 my_program 355b17 369l11 369t21 372s10
 X 23 fifo.ads
-4k10*Fifo 21|1w19 22|66r31 23|13e10
-5R10*Fifo_Type<5|51R9[10[22|66]]> 22|69r16[66] 70r14[66] 71r14[66] 72r14[66]
-. 73r15[66]
-6U15*Push 22|98s24[66] 166s18[66] 191s18[66] 216s19[66] 245s20[66]
-7U15*Pop 22|97s26[66] 164s18[66] 189s18[66] 214s18[66]
+4k10*Fifo 21|1w19 22|85r31 23|13e10
+5R10*Fifo_Type<5|51R9[10[22|85]]> 22|88r16[85] 89r14[85] 90r14[85] 91r14[85]
+. 92r15[85]
+6U15*Push 22|187s24[85] 256s18[85] 283s18[85] 310s22[85] 341s20[85]
+7U15*Pop 22|185s26[85] 253s18[85] 280s18[85] 307s21[85]
 X 25 gnat.ads
-34K9*GNAT 22|5r6 25|37e9
+34K9*GNAT 22|6r6 365r26 25|37e9
 X 26 g-os_lib.ads
-51K14*OS_Lib=51:36 22|5w11
-X 31 system.ads
+51K14*OS_Lib=51:36 22|6w11 365r31
+X 31 jewl.ads
+97K9*JEWL 22|5r1 6r18 26r30 31|238e9
+X 32 jewl-canvas_implementation.ads
+205H8*Canvas_Object_Type
+X 36 jewl-windows.ads
+97k14*Windows 22|5w6 6w23 26r35 36|1578e17
+135E11*Alignment_Type
+135n30*Left{135E11[22|26]} 22|33r71[26] 34r64[26] 35r64[26] 36r64[26] 38r72[26]
+. 39r72[26] 40r72[26]
+135n36*Centre{135E11[22|26]} 22|32r79[26]
+262H8*Window_Type
+324H8*Container_Type<262R8[22|26]>
+325H8*Control_Type<262R8[22|26]>
+358R8*Frame_Type<324R8[22|26]> 22|29r15[26]
+404V13*Frame{358R8[22|26]} 22|29s29[26]
+411V13*Valid{boolean} 22|363s16[26]
+416V13*Next_Command{22|25E9} 22|364s18[26]
+543H8*Text_Control_Type<325R8[22|26]>
+568V13*Get_Text{string} 22|153s33[26] 154s33[26]
+572U13*Set_Text 22|113s18[26] 121s18[26] 129s18[26] 137s18[26] 145s21[26]
+. 153s17[26] 154s17[26] 155s17[26] 358s21[26] 359s18[26] 360s18[26] 361s18[26]
+. 362s18[26]
+590R8*Label_Type<543R8[22|26]> 22|32r16[26] 33r13[26] 34r12[26] 35r12[26]
+. 36r12[26] 38r13[26] 39r13[26] 40r13[26]
+646V12*Label{590R8[22|26]} 22|32s30[26] 33s27[26] 34s26[26] 35s26[26] 36s26[26]
+. 38s27[26] 39s27[26] 40s27[26]
+X 38 system.ads
 67M9*Address
-X 44 s-memory.ads
-53V13*Alloc{31|67M9} 103i<c,__gnat_malloc>22
+X 51 s-memory.ads
+53V13*Alloc{38|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{31|67M9} 105i<c,__gnat_realloc>22
-X 53 s-stausa.ads
+76V13*Realloc{38|67M9} 105i<c,__gnat_realloc>22
+X 54 s-os_lib.ads
+1045U14*OS_Exit 22|365s38
+X 60 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 55 s-stalib.adb
+X 62 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 
