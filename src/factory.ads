@@ -19,10 +19,6 @@ package Factory is
    task Machine_D is 
       entry Start;
    end Machine_D;
-   
---     task Input is 
---        entry Start;
---     end Input;
 
    task GUI is
       entry Start;

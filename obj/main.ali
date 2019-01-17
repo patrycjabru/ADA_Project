@@ -31,7 +31,7 @@ D a-tags.ads		20180524051738 491b781d ada.tags%s
 D a-textio.ads		20180524051738 881db35a ada.text_io%s
 D a-tiflio.ads		20180524051736 56fbda09 ada.text_io.float_io%s
 D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
-D factory.ads		20190115192110 90db13bf factory%s
+D factory.ads		20190117131332 90db13bf factory%s
 D fifo.ads		20190112123500 c7b08b59 fifo%s
 D interfac.ads		20180524051736 5ab55268 interfaces%s
 D i-c.ads		20180524051736 5421119b interfaces.c%s
@@ -75,8 +75,8 @@ X 9 a-iteint.ads
 X 13 a-textio.ads
 49K13*Text_IO 471e16 22|1w10 2r9
 X 16 factory.ads
-4K9*Factory 32e12 22|1w37 2r36 6r4
-31U14*run 22|6s12
+4K9*Factory 28e12 22|1w37 2r36 6r4
+27U14*run 22|6s12
 X 22 main.adb
 4U11*Main 4b11 7l5 7t9
 X 36 s-stausa.ads

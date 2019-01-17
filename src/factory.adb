@@ -1,10 +1,11 @@
 With Ada.Text_IO,
-Ada.Streams.Stream_IO,
-Ada.Text_IO.Text_Streams,
+     Ada.Streams.Stream_IO,
+     Ada.Text_IO.Text_Streams,
      Ada.IO_Exceptions,
-JEWL.Windows;
-With GNAT.OS_Lib,JEWL.Windows;
-
+     JEWL.Windows,
+     Ada.Task_Identification,
+     GNAT.OS_Lib,JEWL.Windows;
+use Ada.Task_Identification;
 
 
 package body Factory is
@@ -22,41 +23,57 @@ package body Factory is
    caps_filling: nonNegative; -- amount of caps in capping machine container
    labels_empty:Boolean with Atomic;
    labels_filling: nonNegative; -- amount of labels in labeling machine container
+   Start_Production: Boolean:=False with Atomic;
    
-   type Command_Code is (Quit, Load, Save);
+   type Command_Code is (Quit, 'C', 'L', 'W', '1', '2', '3', '4', '5', '6');
    package My_Windows is new JEWL.Windows (Command_Code);
    use My_Windows;
    
    My_Frame : Frame_Type := Frame (660, 480, "Water Factory", Quit);
    ilosc_butelek : nonNegative := 0;
    ilosc_butelek_s : String := "Packed bottles: ";
-   Main_label: Label_Type := Label (My_Frame, (0,20), 0, 20, "Packed bottles: ", Centre);
-   Error_Info: Label_Type := Label (My_Frame, (0,400), 0, 20, "", Centre);
+   Main_label: Label_Type := Label (My_Frame, (0,80), 0, 20, "Packed bottles: ", Centre);
+   --Error_Info: Label_Type := Label (My_Frame, (0,400), 0, 20, "", Centre);
    --Type_label: Label_Type := Label (My_Frame, (0,50), 0, 20, "Rodzaj wody: ", Centre);
 
-   Label_A: Label_Type := Label (My_Frame, (20,110), 0, 20, "label_A", Left);
+   Label_A: Label_Type := Label (My_Frame, (20,110), 0, 20, "X", Left);
    Log_A1: Label_Type := Label (My_Frame, (20,150), 0, 20, "", Left);
    Log_A2: Label_Type := Label (My_Frame, (20,190), 0, 20, "", Left);
    Log_A3: Label_Type := Label (My_Frame, (20,230), 0, 20, "", Left);
    Log_A4: Label_Type := Label (My_Frame, (20,270), 0, 20, "", Left);
    
-   Label_B: Label_Type := Label (My_Frame, (200,110), 0, 20, "label_B", Left);
+   Label_B: Label_Type := Label (My_Frame, (200,110), 0, 20, "X", Left);
    Log_B1: Label_Type := Label (My_Frame, (200,150), 0, 20, "", Left);
    Log_B2: Label_Type := Label (My_Frame, (200,190), 0, 20, "", Left);
    Log_B3: Label_Type := Label (My_Frame, (200,230), 0, 20, "", Left);
    Log_B4: Label_Type := Label (My_Frame, (200,270), 0, 20, "", Left);
    
-   Label_C: Label_Type := Label (My_Frame, (350,110), 0, 20, "label_C", Left);
+   Label_C: Label_Type := Label (My_Frame, (350,110), 0, 20, "X", Left);
    Log_C1: Label_Type := Label (My_Frame, (350,150), 0, 20, "", Left);
    Log_C2: Label_Type := Label (My_Frame, (350,190), 0, 20, "", Left);
    Log_C3: Label_Type := Label (My_Frame, (350,230), 0, 20, "", Left);
    Log_C4: Label_Type := Label (My_Frame, (350,270), 0, 20, "", Left);
    
-   Label_D: Label_Type := Label (My_Frame, (512,110), 0, 20, "label_D", Left);	
+   Label_D: Label_Type := Label (My_Frame, (512,110), 0, 20, "X", Left);	
    Log_D1: Label_Type := Label (My_Frame, (512,150), 0, 20, "", Left);
    Log_D2: Label_Type := Label (My_Frame, (512,190), 0, 20, "", Left);
    Log_D3: Label_Type := Label (My_Frame, (512,230), 0, 20, "", Left);
    Log_D4: Label_Type := Label (My_Frame, (512,270), 0, 20, "", Left);
+   
+   Caps_Button : Button_Type := Button (My_Frame, (350,300), 80, 25, "Fill caps", 'C');
+   Water_Button : Button_Type := Button (My_Frame, (200,300), 80, 25, "Fill water", 'W');
+   Label_Button : Button_Type := Button (My_Frame, (512,300), 80, 25, "Fill labels", 'L');
+   
+   Caps_Empty_Label : Label_Type := Label (My_Frame, (350,330), 0, 20, "", Left);
+   Water_Empty_Label : Label_Type := Label (My_Frame, (200,330), 0, 20, "", Left);
+   Labels_Empty_Label : Label_Type := Label (My_Frame, (512,330), 0, 20, "", Left);
+
+   Button1 : Button_Type := Button (My_Frame, (0,0), 110,25, "Regular 0,5l", '1'); 
+   Button2 : Button_Type := Button (My_Frame, (110,0), 110,25, "Regular 1,0l", '2'); 
+   Button3 : Button_Type := Button (My_Frame, (220,0), 110,25, "Regular 1,5l", '3'); 
+   Button4 : Button_Type := Button (My_Frame, (330,0), 110,25, "Sparkling 0,5l", '4'); 
+   Button5 : Button_Type := Button (My_Frame, (440,0), 110,25, "Sparkling 1,0l", '5'); 
+   Button6 : Button_Type := Button (My_Frame, (550,0), 110,25, "Sprkling 1,5l", '6'); 
    
    type Bottle is
       record
@@ -66,40 +83,6 @@ package body Factory is
          labeled: Boolean := false;
       end record;
    type Bottle_access is access Bottle;
-   
-   procedure Preferences is -- initial set up of the factory
-      Use Ada.Text_IO;   
-   begin
-      Ada.Text_IO.Put("Type 'a' if you choose a sparkling water or 'b' if you prefer regular water:");
-      declare
-      S1 : String := Ada.Text_IO.Get_Line;
-      begin
-         Ada.Text_IO.Put_Line (S1);
-         if(S1="a") then
-         typeofWater:=sparkling;
-         else
-         typeofWater:=regular;
-         end if;
-         -- Type_label.Set_Text("Rodzaj wody: "& typeofWater'Img);
-      end;
-      Ada.Text_IO.Put("Choose bottle capacity. Type 'a' - 500ml, 'b' - 1l, 'c' - 1,5l:");
-      declare
-      S2 : String := Ada.Text_IO.Get_Line;
-      begin
-         Ada.Text_IO.Put_Line (S2);
-         if(S2="a") then
-            capacity:="0,5 l";
-            capacity_b:=0.5;
-         elsif (S2="b") then
-            capacity:="1,0 l";
-            capacity_b:=1.0;
-         else
-            capacity:="1,5 l";  
-            capacity_b:=1.5;
-         end if;
-
-      end;
-   end Preferences;
    
    package Bottle_Fifo is new Fifo(Bottle_access); -- creating production lines
    use Bottle_Fifo;
@@ -281,9 +264,10 @@ end UpdateGUI;
                delay(1.0);
                exit when bot = null;
             end loop;
-      Error_Info.Set_Text("Empty bottle container!");
-      
-      
+      --Error_Info.Set_Text("Empty bottle container!");
+      exception
+         when Empty_Error => Abort_Task(Current_Task);
+         when others => GNAT.OS_Lib.OS_Exit(1);
    end;
      
    task body Machine_B is -- second machine -- takes bottles from first line, fills them and puts them on second line
@@ -294,15 +278,9 @@ end UpdateGUI;
       procedure fillContainer is
       begin
          water_empty:=True;
-         Error_Info.Set_Text("Empty water container!");
-         Put_Line("Filling machine is empty! Type 'a' to fill it or 'q' to abort the process!");
-         loop 
-            Ada.Text_IO.Get_Immediate(S);
-            if S='a' then
-               water_filling:=5.0;
-               water_empty:=False;
-               exit;
-            end if;
+         Water_Empty_Label.Set_Text("Empty!");
+         while water_empty loop
+            null;
          end loop;
       end;
         
@@ -317,7 +295,6 @@ end UpdateGUI;
          end if;
          while bot.filled <= 100 loop
             if(bot.filled mod 50=0) then
-               --update.UpdateLogB(bot.filled'Img & "%  - " & fill'Img & " l");
                fill:=fill+inc;
                water_filling:=water_filling-inc;
                if(water_filling<=0.0) then                  
@@ -336,13 +313,16 @@ end UpdateGUI;
       loop
          while caps_empty or labels_empty loop
             null;
-            end loop;
+         end loop;
          Fifo_AB.Pop(bot);
          update.UpdateLabelB(bot.id'Img);
          fillBottle;
          Fifo_BC.Push(bot);
          exit when bot = null;
       end loop;
+      exception
+         when Empty_Error => Abort_Task(Current_Task);
+         when others => GNAT.OS_Lib.OS_Exit(2);
    end;
    
    task body Machine_C is -- third machine - takes bottles from second line, capps them and puts them on third line
@@ -350,7 +330,7 @@ end UpdateGUI;
       procedure fillContainer is
       begin
          caps_empty:=true;
-         Error_Info.Set_Text("Empty caps container!");
+         Caps_Empty_Label.Set_Text("Empty!");
          while caps_empty loop
             null;
          end loop;
@@ -369,7 +349,7 @@ end UpdateGUI;
       accept Start;
       delay(10.5);
       loop
-         while water_empty or caps_empty or labels_empty loop
+         while water_empty or labels_empty loop
             null;
          end loop;
          Fifo_BC.Pop(bot);
@@ -378,6 +358,9 @@ end UpdateGUI;
          Fifo_CD.Push(bot);
          exit when bot = null;
       end loop;
+      exception
+         when Empty_Error => Abort_Task(Current_Task);
+         when others => GNAT.OS_Lib.OS_Exit(3);
    end;
    
    task body Machine_D is -- forth machine - takse bottles from third line, label them and puts them in final package
@@ -385,10 +368,12 @@ end UpdateGUI;
       procedure fillContainer is
       begin
          labels_empty:=true;
+         Labels_Empty_Label.Set_Text("Empty!");
          while labels_empty loop
             null;
          end loop;
       end;
+      
       procedure labelBottle is
       begin
          if labels_filling=0 then
@@ -400,10 +385,10 @@ end UpdateGUI;
          update.UpdateLogD("Bottle " & bot.id'Img & " labeled!");
       end;
    begin
-      accept Start  do
+      accept Start;
       delay(15.75);
          loop
-         while water_empty or caps_empty or labels_empty loop
+         while water_empty or caps_empty loop
             null;
          end loop;
             Fifo_CD.Pop(bot);
@@ -414,7 +399,9 @@ end UpdateGUI;
             update.UpdateMainLabel(ilosc_butelek_s & ilosc_butelek'Img);
          exit when bot = null;
       end loop;
-      end Start;
+      exception
+         when Empty_Error => Abort_Task(Current_Task);
+         when others => GNAT.OS_Lib.OS_Exit(4);
    end;
    
    
@@ -426,66 +413,124 @@ end UpdateGUI;
          bot.id := I;
          Fifo_init.Push(bot);
       end loop;
-      water_filling := 50.0;
-      caps_filling := 5;
-      labels_filling := 13;
+      water_filling := 5.0;
+      caps_filling := 3;
+      labels_filling := 3;
    end;
  
    
    task body GUI is
+      procedure fillCaps is
+      begin
+         caps_filling := caps_filling + 5;
+         caps_empty := False;
+         Caps_Empty_Label.Set_Text("");
+      end fillCaps;
+      
+      procedure fillWater is
+      begin
+         water_filling := water_filling + 5.0;
+         water_empty := False;
+         Water_Empty_Label.Set_Text("");
+      end fillWater;
+      
+      procedure fillLabels is
+      begin
+         labels_filling := labels_filling + 5;
+         labels_empty := False;
+         Labels_Empty_Label.Set_Text("");
+      end fillLabels;
+      
+      procedure blockButtons is
+      begin
+         Button1.Disable;
+         Button2.Disable;
+         Button3.Disable;
+         Button4.Disable;
+         Button5.Disable;
+         Button6.Disable;
+         Start_Production := True;
+      end;
+      
+      procedure setProp1 is
+      begin
+         typeofWater:=regular;
+         capacity_b:=0.5;
+         blockButtons;
+      end;
+      
+      procedure setProp2 is
+      begin
+         typeofWater:=regular;
+         capacity_b:=1.0;
+         blockButtons;
+      end;
+      
+      procedure setProp3 is
+      begin
+         typeofWater:=regular;
+         capacity_b:=1.5;
+         blockButtons;
+      end;
+      
+      procedure setProp4 is
+      begin
+         typeofWater:=sparkling;
+         capacity_b:=0.5;
+         blockButtons;
+      end;
+      
+      procedure setProp5 is
+      begin
+         typeofWater:=sparkling;
+         capacity_b:=1.0;
+         blockButtons;
+      end;
+      
+      procedure setProp6 is
+      begin
+         typeofWater:=sparkling;
+         capacity_b:=1.5;
+         blockButtons;
+      end;
+      
       procedure my_program is 
       begin
          Main_label.Set_Text(ilosc_butelek_s);
-         Label_A.Set_Text("Label_A");
-         Label_B.Set_Text("Label_B");
-         Label_C.Set_Text("Label_C");
-         Label_D.Set_Text("Label_D");
          while Valid(My_Frame) loop
             case Next_Command is
             when Quit => GNAT.OS_Lib.OS_Exit(0);
+            when 'C' => fillCaps;
+            when 'W' => fillWater;
+            when 'L' => fillLabels;
+            when '1' => setProp1;
+            when '2' => setProp2;
+            when '3' => setProp3;
+            when '4' => setProp4;
+            when '5' => setProp5;
+            when '6' => setProp6;
             when others => null;
             end case;
          end loop;
       end my_program;
       begin
-      accept Start  do
-         my_program;
-      end Start;
+      accept Start;
+      my_program;
+      exception
+         when others => GNAT.OS_Lib.OS_Exit(5);
    end;
-   
---     inp : Character;
-   
---     task body Input is
---     begin
---     accept Start  do
---        loop
---           Get_Immediate(inp);
---           if inp='1' then
---              water_filling := water_filling + 5.0;
---              water_empty:=false;
---           elsif inp='2' then
---              caps_filling := caps_filling + 10;
---              Put_Line("xx");
---              caps_empty:=false;
---           elsif inp='3' then
---              labels_filling := labels_filling + 10;
---              Put_Line("xxx");
---              labels_empty := false;
---           end if;
---        end loop;
---        end Start;
---     end;
    
    procedure run is -- starting the production line
    begin
-      Preferences;
-      init;
-      Machine_A.Start;
-      Machine_B.Start;
-      Machine_C.Start;
-      Machine_D.Start;
---        Input.Start;  
-      GUI.Start;
+       GUI.Start;
+       init;
+       while Start_Production=False loop
+         delay(0.1);
+       end loop;
+       Machine_A.Start;
+       Machine_B.Start;
+       Machine_C.Start;
+       Machine_D.Start;
    end run;
 
    
