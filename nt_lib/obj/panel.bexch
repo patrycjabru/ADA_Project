@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__panel.o
+[PROJECT FILES]
+D:\aSTUDIA\ADA_project\nt_lib\default.gpr
+20190114161734
+[BOUND OBJECT FILES]
+D:\aSTUDIA\ADA_project\nt_lib\obj\panel.o
+[GENERATED SOURCE FILES]
+b__panel.ads
+b__panel.adb
+b__panel.ali
+[RESULTING OPTIONS]
+-LD:\aSTUDIA\ADA_project\nt_lib\obj\
+-LD:\aSTUDIA\ADA_project\nt_lib\obj\
+-LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-static
+-static-libgcc
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnarl.a
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

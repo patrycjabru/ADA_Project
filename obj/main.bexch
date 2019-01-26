@@ -2,9 +2,15 @@
 b__main.o
 [PROJECT FILES]
 D:\aSTUDIA\ADA_project\waterfactory.gpr
-20181213160644
+20190114160232
 [BOUND OBJECT FILES]
 D:\aSTUDIA\ADA_project\obj\fifo.o
+D:\aSTUDIA\ADA_project\obj\jewl.o
+D:\aSTUDIA\ADA_project\obj\jewl-win32_interface.o
+D:\aSTUDIA\ADA_project\obj\jewl-canvas_implementation.o
+D:\aSTUDIA\ADA_project\obj\jewl-message_handling.o
+D:\aSTUDIA\ADA_project\obj\jewl-window_implementation.o
+D:\aSTUDIA\ADA_project\obj\jewl-windows.o
 D:\aSTUDIA\ADA_project\obj\factory.o
 D:\aSTUDIA\ADA_project\obj\main.o
 [GENERATED SOURCE FILES]
@@ -17,6 +23,10 @@ b__main.ali
 -LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
 -static
 -static-libgcc
+-luser32
+-lgdi32
+-lcomdlg32
+-lwinmm
 D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnarl.a
 D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
 -Xlinker

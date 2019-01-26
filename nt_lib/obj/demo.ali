@@ -1,0 +1,163 @@
+V "GNAT Lib v2018"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U demo%b		demo.adb		7ce7e809 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.characters%s	a-charac.ads		a-charac.ali
+W ada.characters.handling%s  a-chahan.adb	a-chahan.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.fixed%s	a-strfix.adb		a-strfix.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W nt_console%s		nt_console.adb		nt_console.ali
+Z system.val_int%s	s-valint.adb		s-valint.ali
+
+D ada.ads		20180524051736 76789da1 ada%s
+D a-charac.ads		20180524051736 2d3ec45b ada.characters%s
+D a-chahan.ads		20180524051736 1601a50f ada.characters.handling%s
+D a-chlat1.ads		20180524051736 66457d31 ada.characters.latin_1%s
+D a-except.ads		20180524051736 291912d5 ada.exceptions%s
+D a-ioexce.ads		20180524051736 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20180524051736 119b8fb3 ada.streams%s
+D a-string.ads		20180524051736 90ac6797 ada.strings%s
+D a-strfix.ads		20180524051738 d07c346e ada.strings.fixed%s
+D a-strmap.ads		20180524051736 e8bb714a ada.strings.maps%s
+D a-tags.ads		20180524051738 491b781d ada.tags%s
+D a-textio.ads		20180524051738 881db35a ada.text_io%s
+D a-unccon.ads		20180524051738 0e9b276f ada.unchecked_conversion%s
+D demo.adb		20190114161130 66090c0a demo%b
+D interfac.ads		20180524051736 5ab55268 interfaces%s
+D i-cstrea.ads		20180524051736 e53d8b8e interfaces.c_streams%s
+D nt_console.ads	20190114161130 548ec638 nt_console%s
+D system.ads		20180524051738 32a08138 system%s
+D s-crtl.ads		20180524051736 0ebbdb71 system.crtl%s
+D s-exctab.ads		20180524051738 54135002 system.exception_table%s
+D s-ficobl.ads		20180524051738 078245e4 system.file_control_block%s
+D s-parame.ads		20180524051738 48ec542b system.parameters%s
+D s-secsta.ads		20180524051738 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20180524051736 a7318a92 system.soft_links%s
+D s-stache.ads		20180524051738 a37c21ec system.stack_checking%s
+D s-stalib.ads		20180524051738 09bd3940 system.standard_library%s
+D s-stoele.ads		20180524051738 2dc34a04 system.storage_elements%s
+D s-traent.ads		20180524051736 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20180524051736 34867c83 system.unsigned_types%s
+D s-valint.ads		20180524051736 48a52a3f system.val_int%s
+D s-wchcon.ads		20180524051738 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 14|30r6 30r35 31r6 31r35 32r6 32r35
+X 2 a-charac.ads
+16K13*Characters 18e19 14|32r10 32r39
+X 3 a-chahan.ads
+36K24*Handling 159e28 14|32w21 32r50
+67V13*To_Upper{character} 14|97s17
+X 8 a-string.ads
+16K13*Strings 35e16 14|31r10 31r39
+X 9 a-strfix.ads
+18K21*Fixed 251e22 14|31w18 31r47
+36V13*Index{natural} 14|174s22 178s15 183s27
+184U14*Delete 14|177s10
+X 12 a-textio.ads
+49K13*Text_IO 471e16 14|30w10 30r39
+208U14*Put 14|121s10 131s19 153s19 157s19
+242U14*Put 14|78s7 82s7 85s7 95s7 195s7 261s13 275s13 289s13
+X 14 demo.adb
+34U11*Demo 34b11 306l5 306t9
+36E9 Card_Company 36e66 40r26 68r14 198r51 199r17
+36n26 Unknown{36E9} 199r33 241r15
+36n35 Mastercard{36E9} 59r25 60r25 61r25 62r25 63r25 244r15
+36n47 Visa{36E9} 64r25 257r15
+36n53 Amex{36E9} 55r25 57r25 271r15
+36n59 Diners{36E9} 49r25 50r25 51r25 52r25 53r25 54r25 56r25 58r25 285r15
+38R9 Credit_Card_Type 43e17 48r45 49r7 50r7 51r7 52r7 53r7 54r7 55r7 56r7
+. 57r7 58r7 59r7 60r7 61r7 62r7 63r7 64r7
+40e10 Card{36E9} 206r38
+41a10 Prefix_String{string} 204r26
+42i10 Prefix_Length{integer} 203r40 204r60
+45N4 Max_Length 70r27 236r23
+48a4 Card_Table(38R9) 202r16 203r26 204r12 204r46 206r24
+67i4 Length{natural} 238m7 244r32 248r34 257r32 257r49 262r34 271r32 276r34
+. 285r32 290r34
+68e4 Company{36E9} 239m7 240r12
+69b4 Again{boolean} 233r10 300m7
+70a4 Number{string} 236m35 237m22 237r22 238r32 239r32 248r26 262r26 276r26
+. 290r26
+72U14 Display_Banner 72b14 86l8 86t22 235s7
+88V13 Ask_Again{boolean} 88b13 105l8 105t17 300s16
+89b7 Result{boolean} 100m10 102m10 104r14
+90e7 Key{character} 96r13 96r28 97m10 99r10
+107U14 Get_Number 107b14 108>7 109>7 110<7 171l8 171t18 236s7
+108i7 Line{17|32I12} 119r25 123r27 132r39 136r39 141r39 152r39 154r39 163r42
+109i7 Length{positive} 114r42 120r21 133r46 160r30 164r31
+110a7 Number{string} 117m7 130m35 151m19 156m35
+112i7 Index{positive} 130r43 133r38 134m19 134r28 138r37 139m19 139r28 148r38
+. 149m19 149r28 151r27 156r43 158m19 158r28 160r22 161m22 161r31 164m22
+113e7 Key{character} 125r13 126m10 127r13 128m13 129r18 146r18 156r53 157r24
+114i7 X_Start{17|31I12} 115r28 119r16
+115i7 X_Current{17|31I12} 123r16 132r28 135m19 135r32 136r28 140m19 140r32
+. 141r28 150m19 150r32 152r28 154r28 159m19 159r32 162m22 162r35 163r31
+120i11 I{integer}
+173U14 Remove_Spaces 173b14 173=29 180l8 180t21 237s7
+173a29 Number{string} 174r29 177m18 178r22
+174i7 I{natural} 176r13 177r26 177r29 178m10
+182V13 Number_Length{natural} 182b13 182>28 189l8 189t21 238s17
+182a28 Number{string} 183r34
+183i7 Result{natural} 185r10 186m10 186r20 188r14
+191U14 Display_Centered 191b14 191>32 191>49 196l8 196t24 243s13 247s13 251s13
+. 255s13 265s13 269s13 279s13 283s13 293s13 297s13
+191i32 Line{17|32I12} 194r19
+191a49 Text{string} 192r34 195r12
+192i7 X{17|31I12} 194r16
+198V13 Find_Company{36E9} 198b13 198>27 211l8 211t20 239s18
+198a27 Number{string} 203r13
+199e7 Company{36E9} 206m13 210r14
+201l3 Find_Card 207r18 209l16 209e25
+202i11 I{integer} 203r37 204r23 204r57 206r35
+213V13 Validate{boolean} 213b13 213>23 213>38 230l8 230t16 248s16 262s16
+. 276s16 290s16
+213a23 S{string} 219r33
+213i38 N{natural} 218r29
+214i7 Temp{natural} 219m10 221m13 221r25 222r16 223m16 223r24 226r33
+215i7 Checksum{natural} 226m10 226r22 229r15
+216b7 Double{boolean} 220r13 227m10 227r24
+218i11 I{integer} 219r35 219r40
+X 17 nt_console.ads
+25K9*NT_Console 14|29w6 29r35 17|228e15
+31I12*X_Pos{natural} 14|114r19 114r29 115r19 192r11 192r21
+32I12*Y_Pos{natural} 14|108r23 191r42
+35n14*Blue{34E9} 14|74r21 75r23 79r23 93r23
+35n20*Green{34E9} 14|254r29 268r29 282r29 296r29
+35n33*Red{34E9} 14|242r29 246r29 250r29 259r29 264r29 273r29 278r29 287r29
+. 292r29
+35n54*Gray{34E9} 14|302r20
+36n32*Light_Cyan{34E9} 14|118r23
+36n44*Light_Red{34E9} 14|80r23
+37n22*Yellow{34E9} 14|76r23 83r23
+37n30*White{34E9} 14|92r23 241r45 245r29 249r29 253r29 258r29 263r29 267r29
+. 272r29 277r29 281r29 286r29 291r29 295r29
+98e4*Key_Left{character} 14|138r21
+100e4*Key_Right{character} 14|133r21
+106e4*Key_Delete{character} 14|130r21
+191U14*Set_Cursor 14|124s7 170s7 234s7 305s4
+196U14*Goto_XY 14|77s7 81s7 84s7 94s7 119s7 123s7 132s19 136s19 141s19 152s19
+. 154s19 163s22 194s7 260s13 274s13 288s13 304s4
+207U14*Set_Foreground 14|75s7 80s7 83s7 92s7 118s7 241s29 245s13 249s13 253s13
+. 254s13 258s13 263s13 267s13 272s13 277s13 281s13 286s13 291s13 295s13 302s4
+208U14*Set_Background 14|76s7 79s7 93s7 242s13 246s13 250s13 259s13 264s13
+. 268s13 273s13 278s13 282s13 287s13 292s13 296s13
+214U14*Clear_Screen 14|74s7 303s4
+219U14*Bleep 14|143s35 166s35
+225V13*Get_Key{character} 14|97s27 126s17 128s20
+

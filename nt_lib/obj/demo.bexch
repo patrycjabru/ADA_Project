@@ -1,0 +1,21 @@
+[GENERATED OBJECT FILE]
+b__demo.o
+[PROJECT FILES]
+D:\aSTUDIA\ADA_project\nt_lib\default.gpr
+20190114161034
+[BOUND OBJECT FILES]
+D:\aSTUDIA\ADA_project\nt_lib\obj\nt_console.o
+D:\aSTUDIA\ADA_project\nt_lib\obj\demo.o
+[GENERATED SOURCE FILES]
+b__demo.ads
+b__demo.adb
+b__demo.ali
+[RESULTING OPTIONS]
+-LD:\aSTUDIA\ADA_project\nt_lib\obj\
+-LD:\aSTUDIA\ADA_project\nt_lib\obj\
+-LD:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
+-static
+-static-libgcc
+-luser32
+D:/programy/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

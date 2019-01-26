@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DIa0.614\demo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\demo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 307" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\demo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 229" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 203" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\demo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 185" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\demo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\panel.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\nt_console.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\panel.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 26" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\src\panel.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-canvas_implementation.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-canvas_implementation.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-io.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-io.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-message_handling.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-message_handling.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-simple_windows.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-win32_interface.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-win32_interface.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-windows.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-windows.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-window_implementation.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl-window_implementation.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Patrycja\AppData\Local\Temp\Rar$DRa0.259\source\jewl.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_project>
+      <vfs_file>D:\aSTUDIA\ADA_project\nt_lib\default.gpr</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

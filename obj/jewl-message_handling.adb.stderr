@@ -1,0 +1,2 @@
+jewl-message_handling.adb:108:03: warning: types for unchecked conversion have different sizes
+jewl-message_handling.adb:110:03: warning: types for unchecked conversion have different sizes
